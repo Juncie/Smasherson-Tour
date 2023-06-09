@@ -3,6 +3,7 @@ import ActionButton from "./index";
 export default {
   title: "Components/ActionButton",
   component: ActionButton,
+  tags: ["autodocs"],
 };
 
 export const Fill = (args) => <ActionButton {...args} />;

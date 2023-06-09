@@ -11,9 +11,9 @@ export default function Card({
   flow = "up" || "down" || "left" || "right",
 }) {
   // Defining the base styles for the card
-  const base = "sm:max-w-sm lg:max-w-xl inline-flex flex-col ",
+  const base = "sm:max-w-sm lg:max-w-xl lg:min-w-[678px] inline-flex flex-col ",
     types = {
-      boxed: "bg-white p-4 rounded-sm",
+      boxed: "bg-gray-700 p-4 rounded-md",
       filled: "rounded-sm flex flex-col",
     };
 
@@ -25,11 +25,11 @@ export default function Card({
           alt={imgAlt ? imgAlt : title}
           width={640}
           height={360}
-          className="rounded-sm "
+          className="rounded-sm min-h-max"
         />
       </figure>
 
-      <div id="card-bottom" className="p-2">
+      <div id="card-bottom" className="pt-4">
         <Header
           title={title}
           titleSize="md"
@@ -37,6 +37,7 @@ export default function Card({
           btnTitle="Book Now"
           btnType="ghost"
           btnSize="xs"
+          textColor="white"
         />
       </div>
     </div>

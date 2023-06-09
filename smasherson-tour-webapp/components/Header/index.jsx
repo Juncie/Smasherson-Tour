@@ -6,7 +6,8 @@ export default function Header({
   titleWeight = "bold" || "semi-bold" || "black" || "extra-bold",
   subtitle = "",
   subTitleSize = "sm" || "md" || "lg" || "xl",
-  textColor = "dark" || "light",
+  titleColor = "dark" || "light",
+  subTitleColor = "gray-400" || "white" || "gray-500" || "gray-600" || "black",
   btnTitle = "Book Now",
   btnSize = "" || "sm" || "lg",
   btnType = "fill" || "outline" || "ghost",
@@ -15,15 +16,22 @@ export default function Header({
   ...props
 }) {
   // Base, title, and subtitle styles for the header
-  const base = `flex flex-${direction} justify-between items-center`,
+  const base = `flex flex-${direction} justify-between items-center mx-4 `,
     titleStyle = `
       font-${titleWeight}
       text-${titleSize}
-      ${textColor === "dark" ? "text-gray-900" : "text-white"}`,
+      ${
+        titleColor === "dark"
+          ? "text-blue-400"
+          : titleColor === "light"
+          ? "text-white"
+          : `text-${titleColor}`
+      }
+      }`,
     subtitleStyle = `
       font-normal
       text-${subTitleSize}
-      ${textColor === "dark" ? "text-gray-500" : "text-white"}
+      ${subTitleColor ? `text-${subTitleColor}` : "text-gray-400"}
       `;
 
   return (
@@ -39,7 +47,7 @@ export default function Header({
         </div>
 
         {showButton && (
-          <ActionButton title={btnTitle} size={btnSize} variant={btnType} />
+          <ActionButton label={btnTitle} size={btnSize} variant={btnType} />
         )}
       </div>
     </>
