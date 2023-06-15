@@ -1,4 +1,4 @@
-import ActionButton from "../Button";
+import { Button } from "flowbite-react";
 
 export default function Header({
   title = "Header",
@@ -37,7 +37,6 @@ export default function Header({
   return (
     <>
       <div
-        id="Header"
         className={`${base} ${props.className ? props.className : ""}`}
       >
         <div>
@@ -46,9 +45,7 @@ export default function Header({
           {subtitle && <p className={subtitleStyle}>{subtitle}</p>}
         </div>
 
-        {showButton && (
-          <ActionButton label={btnTitle} size={btnSize} variant={btnType} />
-        )}
+        {showButton && <Button children={btnTitle} size={btnSize} />}
       </div>
     </>
   );

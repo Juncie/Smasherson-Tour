@@ -5,7 +5,7 @@ import tragicGolfer from "../public/tragic-golfer.png";
 import Header from "@/components/Header";
 import { Container, Stack } from "@mui/material";
 import CardRow from "@/components/CardRow";
-import ActionButton from "@/components/Button";
+import { Button } from "flowbite-react";
 
 export default function Home() {
   let s = `The Smasherson Tour is a golf tour for the rest of us. We are
@@ -26,38 +26,62 @@ export default function Home() {
           <p className="text-center text-gray-400 text-md dark:text-white max-w-4xl mx-auto">
             {s}
           </p>
-          <div className="inline-flex gap-4">
-            <ActionButton label="Join the Tour" />
-            <ActionButton label="View Events" variant="outline" />
+          <div className="inline-flex gap-2">
+            <Button
+              children="Join the Tour"
+              className="bg-blue-500 hover:bg-blue-300 transition duration-200 ease-in-out"
+            />
+            <Button children="View Events" color="dark" />
           </div>
         </div>
 
-        <div className="flex justify-center rounded-md overflow-x-auto gap-4">
-          <Image
-            src="https://lh3.googleusercontent.com/drive-viewer/AFGJ81prigxGsMD5HA3xl2prXlAUzfP6pTTX6t1eMDJqT4foQPd5D_Oz_P2tiGKwxZGwyUINJLLzEncAk9-a1YHwK0q382fOCQ=s1600"
-            alt="Tragic Golfer"
-            width={1200}
-            height={1200}
-            className="rounded-md shadow-xl"
-          />
-          <Image
-            src="https://lh3.googleusercontent.com/drive-viewer/AFGJ81r6B4_XHK49TnzaJPHb3trjmrg4rE3ZZB8V4UXujU1j91gd2jCzjGmXaxDexFCxCIHd_nIud7n-vV-AOOUtb0z10W9n=s1600"
-            alt="Tragic Golfer"
-            width={1200}
-            height={1200}
-            className="rounded-md shadow-xl flex-"
-          />
-          <Image
-            src="https://lh3.googleusercontent.com/drive-viewer/AFGJ81prigxGsMD5HA3xl2prXlAUzfP6pTTX6t1eMDJqT4foQPd5D_Oz_P2tiGKwxZGwyUINJLLzEncAk9-a1YHwK0q382fOCQ=s1600"
-            alt="Tragic Golfer"
-            width={1200}
-            height={1200}
-            className="rounded-md shadow-xl"
-          />
+        <div className=" rounded-md overflow-x-hidden  no-scrollbar">
+          <div className="flex justify-center h-scroll gap-4">
+            <Image
+              src="https://lh3.googleusercontent.com/drive-viewer/AFGJ81prigxGsMD5HA3xl2prXlAUzfP6pTTX6t1eMDJqT4foQPd5D_Oz_P2tiGKwxZGwyUINJLLzEncAk9-a1YHwK0q382fOCQ=s1600"
+              alt="Tragic Golfer"
+              width={600}
+              height={600}
+              className="rounded-md shadow-xl"
+            />
+            <Image
+              src="https://lh3.googleusercontent.com/drive-viewer/AFGJ81r6B4_XHK49TnzaJPHb3trjmrg4rE3ZZB8V4UXujU1j91gd2jCzjGmXaxDexFCxCIHd_nIud7n-vV-AOOUtb0z10W9n=s1600"
+              alt="Tragic Golfer"
+              width={600}
+              height={600}
+              className="rounded-md shadow-xl flex-"
+            />
+            <Image
+              src="https://lh3.googleusercontent.com/drive-viewer/AFGJ81prigxGsMD5HA3xl2prXlAUzfP6pTTX6t1eMDJqT4foQPd5D_Oz_P2tiGKwxZGwyUINJLLzEncAk9-a1YHwK0q382fOCQ=s1600"
+              alt="Tragic Golfer"
+              width={600}
+              height={600}
+              className="rounded-md shadow-xl"
+            />
+            <Image
+              src="https://lh3.googleusercontent.com/drive-viewer/AFGJ81r6B4_XHK49TnzaJPHb3trjmrg4rE3ZZB8V4UXujU1j91gd2jCzjGmXaxDexFCxCIHd_nIud7n-vV-AOOUtb0z10W9n=s1600"
+              alt="Tragic Golfer"
+              width={600}
+              height={600}
+              className="rounded-md shadow-xl flex-"
+            />
+          </div>
+        </div>
+      </section>
+      <section id="welcome">
+        <div className="container">
+          <div className="flex justify-between">
+            <h2 className="text-4xl font-bold">
+              Welcome to the Smasherson Golf Tour
+            </h2>
+            <p>
+            Lorem ipsum dolor sit amet consectetur. Consectetur in feugiat habitasse quis. Suspendisse convallis semper facilisis sed dictum morbi et. Iaculis et. 
+            </p>
+          </div>
         </div>
       </section>
 
-      <section id="Upcoming Events">
+      <section id="Featured Events" className="no-scrollbar">
         <CardRow />
       </section>
 
@@ -139,128 +163,6 @@ export default function Home() {
                   </tr>
                 </tbody>
               </table>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="gallery" className="mx-auto bg-gray-400 bg-opacity-5 p-8">
-        <div className="container">
-          <div className="pb-4 text-center space-y-2">
-            <span className=" bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">
-              Gallery
-            </span>
-
-            <h2 className="text-center">
-              <span className="text-4xl font-bold">Shots from the Ranch</span>
-            </h2>
-            <p className="text-center">Check out some of latest photos!</p>
-          </div>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <Image
-              src={"https://source.unsplash.com/random/200x200/?golf"}
-              alt="Tragic Golfer"
-              width={300}
-              height={300}
-              className="rounded-sm shadow-xl"
-            />
-            <Image
-              src={"https://source.unsplash.com/random/200x200/?golf"}
-              alt="Tragic Golfer"
-              width={300}
-              height={300}
-              className="rounded-sm shadow-xl"
-            />
-            <Image
-              src={"https://source.unsplash.com/random/300x300/?golf"}
-              alt="Tragic Golfer"
-              width={300}
-              height={300}
-              className="rounded-sm shadow-xl"
-            />
-            <Image
-              src={"https://source.unsplash.com/random/300x300/?golf"}
-              alt="Tragic Golfer"
-              width={300}
-              height={300}
-              className="rounded-sm shadow-xl"
-            />
-            <Image
-              src={
-                "https://drive.google.com/uc?export=download&id=1nHHm4iU_j7eLZ58jx5mNxdxejH3-yQhr"
-              }
-              alt="Tragic Golfer"
-              width={600}
-              height={600}
-              className="rounded-sm shadow-xl"
-            />
-            <Image
-              src={"https://source.unsplash.com/random/300x300/?golf"}
-              alt="Tragic Golfer"
-              width={600}
-              height={600}
-              className="rounded-sm shadow-xl"
-            />
-            <Image
-              src={"https://source.unsplash.com/random/300x300/?golf"}
-              alt="Tragic Golfer"
-              width={400}
-              height={400}
-              className="rounded-sm shadow-xl"
-            />
-            <Image
-              src={"https://source.unsplash.com/random/300x300/?golf"}
-              alt="Tragic Golfer"
-              width={400}
-              height={400}
-              className="rounded-sm shadow-xl"
-            />
-            <Image
-              src={"https://source.unsplash.com/random/300x300/?golf"}
-              alt="Tragic Golfer"
-              width={400}
-              height={400}
-              className="rounded-sm shadow-xl"
-            />
-          </div>
-        </div>
-      </section>
-
-      <section id="solve-problem" className="">
-        <div className="container flex gap-4 justify-center ">
-          <div className="card card-side bg-base-100 shadow-xl max-w-lg">
-            <figure className="">
-              <img
-                src="https://source.unsplash.com/random/300x500/?golf"
-                alt="Movie"
-              />
-            </figure>
-            <div className="card-body">
-              <h2 className="card-title">New Videos released!</h2>
-              <p>
-                Click below to check out all our latest videos. We promise it's
-                worth it.
-              </p>
-              <div className="card-actions">
-                <button className="btn btn-primary">Watch</button>
-              </div>
-            </div>
-          </div>
-          <div className="card card-side bg-base-100 shadow-xl max-w-lg">
-            <figure className="">
-              <img
-                src="https://source.unsplash.com/random/300x500/?golf"
-                alt="Movie"
-              />
-            </figure>
-            <div className="card-body">
-              <h2 className="card-title">Watch & Learn</h2>
-              <p>
-                Get Expert Lessons and learn how to improve your stroke game!
-              </p>
-              <div className="card-actions">
-                <button className="btn btn-primary">Watch</button>
-              </div>
             </div>
           </div>
         </div>
