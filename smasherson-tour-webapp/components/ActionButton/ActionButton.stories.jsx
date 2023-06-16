@@ -9,6 +9,5 @@ export default{
 export const Template = (args) => <ActionButton {...args}/>
 Template.args = {
     type: "primary",
-    variant: "ghost",
-    size: "md",
+    variant: "filled",
 }

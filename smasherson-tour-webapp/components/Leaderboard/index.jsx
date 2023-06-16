@@ -1,17 +1,21 @@
+"use client";
 import { Table } from "flowbite-react"
-import { DarkThemeToggle } from "flowbite-react";
-import TabBar from "../TabBar";
+import { useState, useEffect } from "react";
+
 export default function Leaderboard({data=[], title="Leaderboard"}) {
+
+    const [leaderboardData, setLeaderboardData] = useState([])
+    useEffect(() => setLeaderboardData(data), [data])
+
     return(
         <div className="container mx-auto flex flex-col gap-4">
             <div className="flex justify-between items-center">
-                <h1 className="text-3xl font-bold">{title}</h1>
-                <DarkThemeToggle />
+                <h1 className="text-xl font-medium">{title}</h1>
             </div>
           
             <Table striped>
                 <Table.Head>
-                    <Table.HeadCell>
+                    <Table.HeadCell className="rounded-none">
                         Rank
                     </Table.HeadCell>
                     <Table.HeadCell>
@@ -25,8 +29,8 @@ export default function Leaderboard({data=[], title="Leaderboard"}) {
                     </Table.HeadCell>
                 </Table.Head>
                 <Table.Body>
-                   {data.map((item) => (
-                        <Table.Row>
+                   {leaderboardData.map((item, i) => (
+                        <Table.Row key={i}>
                             <Table.Cell>
                                 <span className="font-bold">{item.rank}</span>
                             </Table.Cell>
@@ -37,7 +41,7 @@ export default function Leaderboard({data=[], title="Leaderboard"}) {
                                 {item.score}
                             </Table.Cell>
                             <Table.Cell>
-                                {item.earnings}
+                               {`$${item.earnings}`}
                             </Table.Cell>
                         </Table.Row>
                     ))}
