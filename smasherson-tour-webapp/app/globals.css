@@ -2,28 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer base{
+  body {
+    @apply dark:bg-gray-800 bg-white;
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
 }
 
 .no-scrollbar::-webkit-scrollbar {
@@ -36,7 +18,7 @@ body {
 }
 
 .h-scroll{
-  animation: h-scrolling 50s linear infinite;
+  animation: h-scrolling 60s linear infinite alternate-reverse;
   animation-play-state: running;
 }
 
@@ -59,12 +41,16 @@ body {
 }
 
 .background-gradient::before{
-  background: radial-gradient(20% 50% at 50% 50%,rgba(71,127,247,.376) 0,rgba(37,38,44,0) 100%);
+  background: linear-gradient(180deg,rgba(0, 80, 252, 0.376) 0,rgba(74, 101, 255, 0) 100%);
   z-index: -10;
   content: "";
   position: absolute;
   inset: 0;
   transform: scale(2);
   pointer-events: none;
+}
+
+.light body .background-gradient::before{
+  background: linear-gradient(180deg,rgba(255, 255, 255, 0.376) 0,rgba(255, 255, 255, 0) 100%);
 }
 
