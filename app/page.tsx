@@ -12,6 +12,8 @@ import FAQs2 from '~/components/widgets/FAQs2';
 import Pricing from '~/components/widgets/Pricing';
 import Team from '~/components/widgets/Team';
 import CallToAction2 from '~/components/widgets/CallToAction2';
+import EventSlider from '~/components/widgets/EventsSlider';
+import { eventsSliderData } from '~/components/widgets/EventsSlider/data';
 import {
   callToActionData,
   content2Data,
@@ -19,7 +21,6 @@ import {
   faqsData2,
   featuresData,
   heroData,
-  pricingData,
   socialProofData,
 } from '~/shared/data';
 import Contact from '~/components/widgets/Contact';
@@ -34,12 +35,12 @@ export default function Page() {
       <Hero data={heroData} />
       <SocialProof {...socialProofData} />
       <Features3 {...featuresData} />
+      <EventSlider {...eventsSliderData} />
       <Content {...contentData} />
       <Content {...content2Data} />
       <Steps />
       <Testimonial />
       <FAQs2 {...faqsData2} />
-      <Pricing {...pricingData} />
       <Team />
       <Contact />
       <CallToAction2 {...callToActionData} />

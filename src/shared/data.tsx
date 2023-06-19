@@ -66,21 +66,22 @@ export const announcementData: AnnouncementProps = {
 // Header data
 export const headerData: HeaderProps = {
   links: [
-    {
-      label: 'Pages',
-      icon: IconChevronDown,
-      links: [
         {
-          label: 'About us',
+          label: 'Home',
+          href: '/',
+        },
+        {
+          label: 'About the Tour',
           href: '/about',
         },
         {
-          label: 'Pricing',
-          href: '/pricing',
+          label: 'Events',
+          href: '/events',
         },
-      
-      ],
-    },
+        {
+          label: 'Leaderboards',
+          href: '/leaderboards',
+        },
     {
       label: 'Blog',
       href: '/blog',
@@ -93,8 +94,8 @@ export const headerData: HeaderProps = {
   actions: [
     {
       text: 'Login',
-      href: '/',
-      targetBlank: true,
+      href: '/login',
+      targetBlank: false,
       btnType: 'primary',
     },
     {
@@ -225,28 +226,20 @@ export const faqsData2: FAQsProps = {
   },
   items: [
     {
-      title: 'What do I need to start?',
+      title: 'How do I participate in events?',
       description: `Nunc mollis tempor quam, non fringilla elit sagittis in. Nullam vitae consectetur mi, a elementum arcu. Sed laoreet, ipsum et vehicula dignissim, leo orci pretium sem, ac condimentum tellus est quis ligula.`,
     },
     {
-      title: 'How to install the NextJS + Tailwind CSS template?',
+      title: 'What if I am just starting out?',
       description: `Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer eleifend vestibulum nisl in iaculis. Mauris dictum ac purus vestibulum auctor. Praesent imperdiet lectus et massa faucibus, quis viverra massa rhoncus.`,
     },
     {
-      title: "What's something that you completely don't understand?",
+      title: "What are handicaps?",
       description: `Mauris vitae eros a dui varius luctus. Suspendisse rutrum, sapien nec blandit bibendum, justo sapien sollicitudin erat, id aliquam sapien purus quis leo. Aliquam vulputate vestibulum consectetur.`,
     },
     {
-      title: "What's an example of when you changed your mind?",
+      title: "What prizes can I win?",
       description: `Nunc dapibus lacinia ipsum ut elementum. Integer in pretium sapien. Ut pretium nisl mauris, ut rutrum justo condimentum id. Etiam aliquet, arcu at iaculis laoreet, est arcu egestas sapien, eget sollicitudin odio orci et nunc.`,
-    },
-    {
-      title: 'What is something that you would really like to try again?',
-      description: `Duis in maximus mauris, id eleifend mauris. Nam a fringilla arcu. Curabitur convallis, tellus non aliquet rhoncus, lacus massa auctor eros, in interdum lectus augue sed augue. Fusce tempor ex id faucibus efficitur.`,
-    },
-    {
-      title: 'If you could only ask one question to each person you meet, what would that question be?',
-      description: `Nullam imperdiet sapien tincidunt erat dapibus faucibus. Vestibulum a sem nec lorem imperdiet scelerisque non sed lacus. Ut pulvinar id diam vitae auctor. Nam tempus, neque et elementum consectetur, ex ipsum pulvinar risus, vel sodales ligula tortor eu eros.`,
     },
   ],
 };
@@ -635,15 +628,6 @@ export const content2Data: ContentProps = {
   content:
     'Per odio fabellas consulatu cu. Utroque detracto mel ea, quo te latine theophrastus. Ea his tale nib dissentias, mei exerci tamquam euripidis cu.',
   items: [
-    {
-      title: 'Per ei quaeque sensibus',
-    },
-    {
-      title: 'Cu imperdiet posidonium sed',
-    },
-    {
-      title: 'Nulla omittam sadipscing mel ne',
-    },
     {
       title: 'Per ei quaeque sensibus',
     },
@@ -1201,7 +1185,7 @@ export const contact2Data: ContactProps = {
 
 // Footer data
 export const footerData: FooterProps = {
-  title: 'TailNext',
+  title: 'Smash Golf Tour',
   links: [
     {
       label: 'Terms & Conditions',
@@ -1353,7 +1337,7 @@ export const footerData2: FooterProps = {
   columns: [
     {
       title: 'Address',
-      texts: ['51 Phasellus Avenue Maecenas', 'Aliquam, AQ 52098'],
+      texts: ['1234 Golfers Rd.'],
     },
     {
       title: 'Phone',
@@ -1368,16 +1352,14 @@ export const footerData2: FooterProps = {
     { label: 'Twitter', icon: IconBrandTwitter, href: '#' },
     { label: 'Instagram', icon: IconBrandInstagram, href: '#' },
     { label: 'Facebook', icon: IconBrandFacebook, href: '#' },
-    { label: 'RSS', icon: IconRss, href: '#' },
-    { label: 'Github', icon: IconBrandGithub, href: '/' },
   ],
   footNote: (
     <div className="mr-4 text-sm dark:text-slate-400">
-      <span className="float-left mr-1.5 h-5 w-5 rounded-sm bg-[url(https://onwidget.com/favicon/favicon-32x32.png)] bg-cover md:-mt-0.5 md:h-6 md:w-6"></span>
-      Made by{' '}
-      <a className="text-blue-600 hover:underline dark:text-gray-200" href="https://onwidget.com/">
+      <span className="float-left mr-1.5 h-5 w-5 rounded-sm bg-cover md:-mt-0.5 md:h-6 md:w-6"></span>
+      Created by{' '}
+      <a className="text-indigo-500 hover:underline dark:text-gray-200" href="https://juncie.com/">
         {' '}
-        onWidget
+        Juncie
       </a>{' '}
       · All rights reserved.
     </div>

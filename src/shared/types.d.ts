@@ -106,6 +106,15 @@ interface Testimonial {
   icon?: Function;
   href?: string;
 }
+interface EventCard {
+    title: string;
+    description: string;
+    image?: any;
+    imgAlt?: string;
+    href?: string;
+    slug?: string;
+    date?: string;
+}
 
 interface Link {
   label?: string;
@@ -271,3 +280,5 @@ interface WindowSize {
   width: number;
   height: number;
 }
+
+

@@ -1,6 +1,6 @@
 {
-  "name": "@onwidget/tailnext",
-  "description": "A template to make your website using Next.js + Tailwind CSS.",
+  "name": "smash-golf-tour",
+  "description": "home of golf's non-traditional-champions",
   "version": "0.3.1",
   "private": true,
   "scripts": {

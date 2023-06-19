@@ -1,10 +1,10 @@
 module.exports.SITE = {
-  name: 'TailNext',
+  name: 'Smash Golf Tour',
 
   origin: 'https://tailnext.vercel.app',
   basePathname: '/',
   trailingSlash: false,
 
-  title: 'TailNext — Your website with Next.js + Tailwind CSS',
-  description: 'TailNext is a free and ready to start template to make your website using Next.js and Tailwind CSS.',
+  title: `The Smash Golf Tour — Home of Golf's Non-Traditional Champions`,
+  description: 'The Smash Golf Tour is a professional golf tour for non-professional golfers.',
 };
