@@ -33,7 +33,7 @@ export interface EventSliderProps {
   const iconStyles = 'text-blue-100 opacity-50 hover:opacity-100 transition duration-200'
 
   return (
-    <section className="container mx-auto">
+    <section className="container mx-auto my-8">
           <div className="container mx-auto">
             <div className='flex justify-between items-center gap-4'>
             <div className='space-y-2'>
@@ -52,7 +52,7 @@ export interface EventSliderProps {
                </div>
             
              </div>
-                  <div className="embla ">
+                  <div className="embla">
               <div className="embla__viewport" ref={emblaRef}>
                 <div className="embla__container flex gap-1">
                   {eventData.map(({title, description, image, imgAlt, slug, date, href}, i) => (
@@ -60,8 +60,8 @@ export interface EventSliderProps {
                       <EventCard
                         title={title}
                         description={description}
-                        image={image}
-                        imgAlt={imgAlt}
+                        image={image.src}
+                        imgAlt={image.alt}
                         slug={slug}
                         date={date}
                         href={href}

@@ -11,7 +11,10 @@ export const eventsSliderData: EventSliderProps = {
         {
             title: 'Clostest to the Pin',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-            image: event1,
+            image:{
+                src: event1,
+                alt: 'Clostest to the Pin',
+            },
             imgAlt: 'Clostest to the Pin',
             slug: 'clostest-to-the-pin',
             date: '2021-10-10',
@@ -20,7 +23,10 @@ export const eventsSliderData: EventSliderProps = {
           {
             title: 'Scramble',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-            image: event2,
+            image: {
+                src: event2,
+                alt: 'Scramble',
+            },
             imgAlt: 'Scramble',
             slug: 'scramble',
             date: '2021-10-10',
@@ -29,7 +35,10 @@ export const eventsSliderData: EventSliderProps = {
         {
             title: 'Longest Drive',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-            image: event3,
+            image: {
+                src: event3,
+                alt: 'Longest Drive',
+            },
             imgAlt: 'Longest Drive',
             slug: 'longest-drive',
             date: '2021-10-10',
@@ -39,7 +48,10 @@ export const eventsSliderData: EventSliderProps = {
         {
             title: 'Stroke Play',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-            image: event4,
+            image: {
+                src: event4,
+                alt: 'Stroke Play',
+            },
             imgAlt: 'Stroke Play',
             slug: 'stroke-play',
             date: '2021-10-10',

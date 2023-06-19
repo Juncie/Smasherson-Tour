@@ -389,7 +389,7 @@ export const faqs4Data: FAQsProps = {
 
 // CallToAction data
 export const callToActionData: CallToActionProps = {
-  title: 'Next.js + Tailwind CSS',
+  title: 'Join the Tour of Champions',
   subtitle:
     'Aliquam sodales porttitor lacus ac tristique. Etiam posuere elit at leo feugiat sodales. Sed ac mauris quis sem tempor condimentum non at metus.',
   callToAction: {

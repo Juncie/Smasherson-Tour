@@ -109,7 +109,7 @@ interface Testimonial {
 interface EventCard {
     title: string;
     description: string;
-    image?: any;
+    image?: Image;
     imgAlt?: string;
     href?: string;
     slug?: string;
