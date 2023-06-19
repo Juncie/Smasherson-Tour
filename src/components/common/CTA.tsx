@@ -17,7 +17,8 @@ const CTA = (props: { data: CallToAction; class?: string }) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              {Icon && <Icon className="mr-1 -ml-1.5 h-5 w-5" />} {text}
+             {text} 
+             {Icon && <Icon className="ml-1 -mr-1.5 h-5 w-5" />} 
             </Link>
           ) : (
             <Link
@@ -26,7 +27,8 @@ const CTA = (props: { data: CallToAction; class?: string }) => {
               } ${btnText === 'uppercase' ? 'uppercase' : ''}`}
               href={href}
             >
-              {Icon && <Icon className="mr-1 -ml-1.5 h-5 w-5" />} {text}
+               {text}
+              {Icon && <Icon className="ml-1 -mr-1.5 h-5 w-5" />}
             </Link>
           )}
         </div>

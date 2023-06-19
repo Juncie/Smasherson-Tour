@@ -1,5 +1,6 @@
 import {
   IconArrowDown,
+  IconArrowRight,
   IconArrowsRightLeft,
   IconBrandFacebook,
   IconBrandGithub,
@@ -47,21 +48,18 @@ import cameraBackImg from '~/assets/images/camera-back.jpg';
 import heroImg from '~/assets/images/hero.jpg';
 import hero2Img from '~/assets/images/hero2.jpg';
 import gasImg from '~/assets/images/gas.jpg';
-import nextJsLogo from '~/assets/images/nextjs-logo.png';
-import reactLogo from '~/assets/images/react-logo.png';
-import tailwindCssLogo from '~/assets/images/tailwind-css-logo.png';
-import typescriptLogo from '~/assets/images/typescript-logo.png';
+import toptracerLogo from '~/assets/images/toptracer-2.webp';
 
 // Announcement data
 export const announcementData: AnnouncementProps = {
   title: 'NEW',
   callToAction: {
-    text: 'This template is made with Next.js 13 using the new App Router »',
-    href: 'https://nextjs.org/docs/app',
+    text: 'View Leaderboard Results From the Latest Matches »',
+    href: '/',
   },
   callToAction2: {
-    text: 'Follow @onWidget on Twitter',
-    href: 'https://twitter.com/intent/user?screen_name=onwidget',
+    text: 'Follow @SmashersTour on Twitter',
+    href: 'https://twitter.com/',
   },
 };
 
@@ -80,22 +78,7 @@ export const headerData: HeaderProps = {
           label: 'Pricing',
           href: '/pricing',
         },
-        {
-          label: 'Contact us',
-          href: '/contact',
-        },
-        {
-          label: 'FAQs',
-          href: '/faqs',
-        },
-        {
-          label: 'Privacy Policy',
-          href: '/privacy',
-        },
-        {
-          label: 'Terms & Conditions',
-          href: '/terms',
-        },
+      
       ],
     },
     {
@@ -109,10 +92,16 @@ export const headerData: HeaderProps = {
   ],
   actions: [
     {
-      text: 'Download',
-      href: 'https://github.com/onwidget/tailnext',
+      text: 'Login',
+      href: '/',
       targetBlank: true,
       btnType: 'primary',
+    },
+    {
+      text: 'Sign-up',
+      href: '/',
+      targetBlank: true,
+      btnType: 'secondary',
     },
   ],
   isSticky: true,
@@ -125,26 +114,26 @@ export const headerData: HeaderProps = {
 export const heroData: HeroProps = {
   title: (
     <>
-      Free template for <span className="hidden md:inline">starts a website using</span> <span>Next.js</span> +{' '}
-      <span className="sm:whitespace-nowrap">Tailwind CSS</span>
+      Home of Golf&rsquo;s <span className="hidden md:inline">Non-Traditional</span> {' '}
+      <span className="sm:whitespace-nowrap text-blue-500">Champions</span>
     </>
   ),
   subtitle: (
     <>
       <span className="hidden md:inline">
         <span className="font-semibold underline decoration-primary-600 decoration-wavy decoration-1 underline-offset-2">
-          TailNext
+          The Smash Golf Tour
         </span>{' '}
-        is a production ready template to start your new website using <em>Next.js</em> + <em>Tailwind CSS</em>.
+        is a golf tour for the rest of us. We are a group of golfers who love the game, but don’t have the time to
+        practice and play as much as we’d like.
       </span>{' '}
-      It has been designed following Best Practices, SEO, Accessibility, Dark Mode, great Page Speed, image
-      optimization.
+      
     </>
   ),
   callToAction: {
-    text: 'Get template',
-    href: 'https://github.com/onwidget/tailnext',
-    icon: IconDownload,
+    text: 'Upcoming Events',
+    href: '/',
+    icon: IconArrowRight,
     targetBlank: true,
     btnType: 'primary',
   },
@@ -154,7 +143,7 @@ export const heroData: HeroProps = {
   },
   image: {
     src: heroImg,
-    alt: 'Hero TailNext',
+    alt: 'Hero Smash Golf Tour',
   },
 };
 
@@ -184,23 +173,8 @@ export const socialProofData: SocialProofProps = {
   images: [
     {
       link: 'https://nextjs.org/',
-      src: nextJsLogo,
+      src: toptracerLogo,
       alt: 'NextJs Logo',
-    },
-    {
-      link: 'https://react.dev/',
-      src: reactLogo,
-      alt: 'React Logo',
-    },
-    {
-      link: 'https://tailwindcss.com/',
-      src: tailwindCssLogo,
-      alt: 'Tailwind CSS Logo',
-    },
-    {
-      link: 'https://www.typescriptlang.org/',
-      src: typescriptLogo,
-      alt: 'Typescript Logo',
     },
   ],
 };
@@ -427,14 +401,14 @@ export const callToActionData: CallToActionProps = {
     'Aliquam sodales porttitor lacus ac tristique. Etiam posuere elit at leo feugiat sodales. Sed ac mauris quis sem tempor condimentum non at metus.',
   callToAction: {
     text: 'Get template',
-    href: 'https://github.com/onwidget/tailnext',
+    href: '/',
     icon: IconDownload,
   },
   items: [
     {
       title: 'Get template',
       description: 'Aliquam sodales est lectus, quis.',
-      href: 'https://github.com/onwidget/tailnext',
+      href: '/',
     },
     {
       title: 'Learn more',
@@ -478,18 +452,18 @@ export const featuresData: FeaturesProps = {
   header: {
     title: (
       <>
-        What you get with <span className="whitespace-nowrap">TailNext</span>
+       Challenge Golfers From <span className="whitespace-nowrap">Around the World</span>
       </>
     ),
     subtitle:
       'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque rem aperiam, eaque ipsa quae.',
-    highlight: 'Features',
+    highlight: 'Welcome to the Smash Golf Tourament',
   },
   items: [
     {
-      title: 'Next.Js + Tailwind CSS Integration',
+      title: 'Compete against everyone',
       description:
-        'A seamless integration between two great frameworks that offer high productivity, performance and versatility.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla.',
       icon: IconBrandTailwind,
       link: {
         label: 'Discover now',
@@ -497,9 +471,9 @@ export const featuresData: FeaturesProps = {
       },
     },
     {
-      title: 'Ready-to-use Components',
+      title: 'Track stats and records',
       description:
-        'Widgets made with Tailwind CSS ready to be used in Marketing Websites, SaaS, Blogs, Personal Profiles, Small Business...',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla.',
       icon: IconComponents,
       link: {
         label: 'Discover now',
@@ -507,7 +481,7 @@ export const featuresData: FeaturesProps = {
       },
     },
     {
-      title: 'Best Practices',
+      title: 'Earn Prizes',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla.',
       icon: IconListCheck,
@@ -517,17 +491,16 @@ export const featuresData: FeaturesProps = {
       },
     },
     {
-      title: 'Excellent Page Speed',
+      title: 'Appear on Leaderboards',
       description:
-        'Having a good page speed impacts organic search ranking, improves user experience (UI/UX) and increase conversion rates.',
-      icon: IconRocket,
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla.',      icon: IconRocket,
       link: {
         label: 'Discover now',
         href: '/',
       },
     },
     {
-      title: 'Search Engine Optimization (SEO)',
+      title: 'Powered by Toptracer',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla.',
       icon: IconArrowsRightLeft,
@@ -537,7 +510,7 @@ export const featuresData: FeaturesProps = {
       },
     },
     {
-      title: 'Open to new ideas and contributions',
+      title: 'Participate in Events',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla.',
       icon: IconBulb,
@@ -626,25 +599,25 @@ export const featuresData3: FeaturesProps = {
 // Content data
 export const contentData: ContentProps = {
   header: {
-    title: 'Aliquip definiebas ad est',
+    title: `Solving Traditional Golf's Biggest Problems`,
     subtitle: 'Quando cetero his ne, eum admodum sapientem ut',
-    highlight: 'Content',
+    highlight: 'Why Smash Golf Tour?',
   },
   content:
     'Ne dicta praesent ocurreret has, diam theophrastus at pro. Eos etiam regione ut, persius eripuit quo id. Sit te euismod tacimates.',
   items: [
     {
-      title: 'Per ei quaeque sensibus',
+      title: 'Takes Too Long',
       description:
         'Ex usu illum iudico molestie. Pro ne agam facete mediocritatem, ridens labore facete mea ei. Pro id apeirian dignissim.',
     },
     {
-      title: 'Cu imperdiet posidonium sed',
+      title: 'It’s Expensive',
       description:
         'Amet utinam aliquando ut mea, malis admodum ocurreret nec et, elit tibique cu nec. Nec ex maluisset inciderint, ex quis.',
     },
     {
-      title: 'Nulla omittam sadipscing mel ne',
+      title: 'Not Welcoming',
       description:
         'At sed possim oporteat probatus, justo graece ne nec, minim commodo legimus ut vix. Ut eos iudico quando soleat, nam modus.',
     },
@@ -1350,7 +1323,7 @@ export const footerData: FooterProps = {
     { label: 'Instagram', icon: IconBrandInstagram, href: '#' },
     { label: 'Facebook', icon: IconBrandFacebook, href: '#' },
     { label: 'RSS', icon: IconRss, href: '#' },
-    { label: 'Github', icon: IconBrandGithub, href: 'https://github.com/onwidget/tailnext' },
+    { label: 'Github', icon: IconBrandGithub, href: '/' },
   ],
   footNote: (
     <div className="mr-4 text-sm dark:text-slate-400">
@@ -1396,7 +1369,7 @@ export const footerData2: FooterProps = {
     { label: 'Instagram', icon: IconBrandInstagram, href: '#' },
     { label: 'Facebook', icon: IconBrandFacebook, href: '#' },
     { label: 'RSS', icon: IconRss, href: '#' },
-    { label: 'Github', icon: IconBrandGithub, href: 'https://github.com/onwidget/tailnext' },
+    { label: 'Github', icon: IconBrandGithub, href: '/' },
   ],
   footNote: (
     <div className="mr-4 text-sm dark:text-slate-400">
