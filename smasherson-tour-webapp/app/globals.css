@@ -4,8 +4,12 @@
 
 @layer base{
   body {
-    @apply dark:bg-gray-800 bg-white;
+    @apply dark:bg-gray-800 bg-white transition duration-200;
   }
+}
+
+body{
+  overflow-x: hidden;
 }
 
 .no-scrollbar::-webkit-scrollbar {
@@ -18,8 +22,8 @@
 }
 
 .h-scroll{
-  animation: h-scrolling 60s linear infinite alternate-reverse;
-  animation-play-state: running;
+  animation: h-scrolling 10s linear infinite alternate-reverse;
+  animation-play-state: paused;
 }
 
 .h-scroll:hover{
@@ -28,16 +32,17 @@
 
 @keyframes h-scrolling {
   0% {
-    transform: translateX(calc(50%));
+    transform: translateX(calc(75%));
   }
   100% {
-    transform: translateX(calc(-120vw));
+    transform: translateX(calc(0%));
   }
 }
 
 .embla__slide {
   position: relative;
-  min-width: 0;
+  min-width: 100%;
+  flex: 0 0 100%;
 }
 
 .background-gradient::before{

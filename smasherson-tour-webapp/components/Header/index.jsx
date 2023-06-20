@@ -18,17 +18,7 @@ export default function Header({
 }) {
   // Base, title, and subtitle styles for the header
   const base = `flex flex-${direction} justify-between items-center mx-4 `,
-    titleStyle = `
-      font-${titleWeight}
-      text-${titleSize}
-      ${
-        titleColor === "dark"
-          ? "text-blue-400"
-          : titleColor === "light"
-          ? "text-white"
-          : `text-${titleColor}`
-      }
-      }`,
+    titleStyle = `font-${titleWeight} text-${titleSize}`,
     subtitleStyle = `
       font-normal
       text-${subTitleSize}
