@@ -1,20 +1,28 @@
 "use client";
-import { Card } from "flowbite-react";
+import { Badge, Card } from "flowbite-react";
 import ReactPlayer from "react-player/youtube"
 import Header from "../Header";
 
-export default function VideoPlayer(props) {
+export default function VideoPlayer({headerTitle, headerSubTitle, url, height, light}, ...props) {
    return (
         
             <Card className="container mx-auto border-gray-200 border-solid flex justify-center">
-                <Header title={props.title} showButton={false}/>
+                <Header 
+                    title={headerTitle}
+                    subTitle={headerSubTitle}
+                    showButton={false}
+                    />
+
                 <ReactPlayer
-                    url={props.url}
-                    width='100%'
-                    height={props.height ?? '24rem'}
+                    url={url}
+                    width={props.width ?? '100%'}
+                    height={height ?? '24rem'}
                     controls
-                    light={props.light ?? false}
-                />  
+                    light={light ?? false}
+                /> 
+                <div>
+                    <Badge className="bg-red-500 text-white p-4 rounded-full inline-flex" children="Live"  />
+                    </div> 
             </Card>
 
         

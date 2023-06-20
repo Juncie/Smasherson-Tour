@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Grid } from "@mui/material";
 import ReactPlayer from "react-player";
-import { Card } from "flowbite-react";
+import { Avatar, Card } from "flowbite-react";
 
 import ActionButton from "@/components/ActionButton";
 import VideoPlayer from "@/components/VideoPlayer";
@@ -73,15 +73,12 @@ export default function Home(props) {
          
         <Grid container spacing={4} className="flex justify-center">
 
-          <Grid item>
+          <Grid item className="">
               <Card>
                 <h3 children="Follow Us!" className="font-medium" />
                 <ul className="flex flex-col">
                   <li className=" flex flow-row">
-                    <small>
                       <AiFillFacebook />
-                      <a href="https://meta.com" children="Facebook"/>
-                    </small>                   
                   </li> 
                   <li className="w-6">
                     <small>
@@ -113,15 +110,33 @@ export default function Home(props) {
             <div className="container flex justify-center flex-col gap-4">
               <article id="welcome" >
                 <div className="container space-y-6">
-                  <VideoPlayer light url={VIDEO_URL}/>
+                  <VideoPlayer light url={VIDEO_URL} headerTitle="Spanish Bay Knockout Challange"/>
                 </div>
+              </article>
+              <article>
+                <Card className="">
+                  <div >
+                    <h3>
+                      <strong children="East Vs West Results"/>
+                      <div>
+                        <small children="East Wins 3-2" />
+                      </div>
+                      </h3>
+                  </div>
+                  <div className="border border-red-300">
+                 
+                      <Avatar rounded/>
+                
+                  
+                  </div>
+                </Card>
               </article>
               <article id="Leaderboards" className="">
                 <LeaderboardTabs  />
               </article>
               <article id="welcome" >
                 <div className="container space-y-6">
-                  <VideoPlayer light url={VIDEO_URL2}/>
+                  <VideoPlayer light url={VIDEO_URL2} headerTitle="Ultimate Influencer Golf Showdown"/>
                 </div>
               </article>
             </div>
