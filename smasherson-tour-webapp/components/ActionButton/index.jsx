@@ -32,13 +32,11 @@ export default function ActionButton({
     type = "primary" || "secondary" || "tertiary", 
     variant = "filled" || "outline" || "ghost", 
     size = "" || "sm" || "md" || "lg" || "xl",
-    children,
     label,
-    title,
     onClick,
+    ...props
 }) {
     return <button 
-                children={children ?? "Press The Button"} 
                 size={size}
                 onClick={onClick}
                 className={`${theme[type][variant]} 
@@ -49,7 +47,8 @@ export default function ActionButton({
                     text-center text-sm font-semibold tracking-wide 
                     shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2`}
             >
-                {children ?? label ?? title ?? "Press The Button"}
+                {label ?? "Press The Button"}
+                {props.children}
             </button>
 
 }

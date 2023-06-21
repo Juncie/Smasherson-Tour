@@ -32,11 +32,10 @@ export default function Header({
       >
         <div>
           <h2 className={titleStyle}>{title}</h2>
-          {/* Only render subtitle if subtitle prop has been passed */}
           {subtitle && <p className={subtitleStyle}>{subtitle}</p>}
         </div>
 
-        {showButton && <Button children={btnTitle} size={btnSize} />}
+        {showButton && <Button size={btnSize} >{btnTitle}</Button>}
       </div>
     </>
   );

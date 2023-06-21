@@ -30,7 +30,7 @@ export default function EventCard({
             {description ?? "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quos quidem sequi illum facere recusandae voluptatibus"}
         </p>
         {btnShow && (
-          <ActionButton children="View Event Details" type="primary" variant="filled" />
+          <ActionButton label="View Event Details" type="primary" variant="filled" />
         )}
       </Card>
     </div>

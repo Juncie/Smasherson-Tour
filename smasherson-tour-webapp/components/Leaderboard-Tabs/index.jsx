@@ -4,6 +4,7 @@ import { Tabs } from 'flowbite-react';
 import Leaderboard from '../Leaderboard';
 import Header from '../Header';
 import { Card } from 'flowbite-react';
+import { Tab } from '@mui/material';
 
 
 export default function LeaderboardTabs({ tabs, ...props }) { 
@@ -45,8 +46,10 @@ export default function LeaderboardTabs({ tabs, ...props }) {
             aria-label="Leaderboard Tabs"
             style="underline"
           >
-           {data.map(({title, children}) => 
-              <Tabs.Item title={title} children={children} />
+           {data.map(({title, children}, i) => 
+              <Tabs.Item title={title} key={i}>
+                {children}
+              </Tabs.Item>
               )}
           </Tabs.Group>
         </Card>

@@ -9,7 +9,7 @@ export default function Footer() {
       <a href="#" class="flex justify-center items-center">
         <Logo height={150} width={150} />
       </a>
-      <p class="my-6 text-white dark:text-gray-400">Home of Golf's Non-Traditional Champions</p>
+      <p class="my-6 text-white dark:text-gray-400">Home of Golf&rsquo;s Non-Traditional Champions</p>
       <ul class="flex flex-wrap justify-center items-center mb-6 text-gray-900 dark:text-white">
           <li>
               <a href="#" class="mr-4 hover:underline md:mr-6 ">About</a>
