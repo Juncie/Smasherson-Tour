@@ -1,5 +1,5 @@
 "use client";
-import { Button } from "flowbite-react";
+import ActionButton from "../ActionButton";
 
 export default function Header({
   title = "Header",
@@ -9,7 +9,7 @@ export default function Header({
   subTitleSize = "sm" || "md" || "lg" || "xl",
   titleColor = "dark" || "light",
   subTitleColor = "gray-400" || "white" || "gray-500" || "gray-600" || "black",
-  btnTitle = "Book Now",
+  btnTitle,
   btnSize = "" || "sm" || "lg",
   btnType = "fill" || "outline" || "ghost",
   showButton = true || false,
@@ -27,15 +27,13 @@ export default function Header({
 
   return (
     <>
-      <div
-        className={`${base} ${props.className ? props.className : ""}`}
-      >
+      <div className={`${base} ${props.className ? props.className : ""}`}>
         <div>
           <h2 className={titleStyle}>{title}</h2>
           {subtitle && <p className={subtitleStyle}>{subtitle}</p>}
         </div>
 
-        {showButton && <Button size={btnSize} >{btnTitle}</Button>}
+        {showButton && <ActionButton type={btnType} size={btnSize}  >{btnTitle}</ActionButton>}
       </div>
     </>
   );

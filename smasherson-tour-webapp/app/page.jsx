@@ -5,7 +5,6 @@ import { Grid } from "@mui/material";
 import ReactPlayer from "react-player";
 import { Avatar, Card } from "flowbite-react";
 
-import ActionButton from "@/components/ActionButton";
 import VideoPlayer from "@/components/VideoPlayer";
 import LeaderboardTabs from "@/components/Leaderboard-Tabs";
 
@@ -23,7 +22,7 @@ const VIDEO_URL2 = "https://www.youtube.com/watch?v=fAcBo1TAGYA";
 export default function Home(props) {
   return (
     <>
-      <main className="container mx-auto space-y-6">
+      <main className="mx-auto space-y-6 max-w-screen-2xl">
         <section id="Hero" className="" >
                    
         <Link href="https://toptracer.com" target="_blank" >
@@ -36,23 +35,25 @@ export default function Home(props) {
               </div>
         </section>
 
-        <Grid container spacing={4} className="flex justify-center">
+        <Grid container spacing={2} className="flex justify-center">
 
-          <Grid item className="">
-              <Card>
+          <Grid item lg={2} className="w-full flex mx-auto">
+              <Card className="dark:bg-inherit">
                 <h3 className="font-medium">
                 Follow Us!
                 </h3>
                 <ul className="flex flex-col">
-                  <li className=" flex flow-row">
+                  <li className="flex flow-row items-center">
                       <AiFillFacebook size={32} color="#3b5998" />
+                      <small>Facebook</small>
                   </li> 
-                  <li className="w-6">
-                    <small>
+                  <li className="flex flex-row items-center">
                       <a href="https://meta.com" >
                       <AiFillYoutube size={32} color="#FF0000" />
-                      </a>
+                    <small>
+                      YouTube
                       </small>                   
+                      </a>
                   </li> 
                   <li className="w-6">
                     <small>
@@ -73,7 +74,7 @@ export default function Home(props) {
               </Card>
           </Grid>
 
-          <Grid item lg={6} className="background-gradient">
+          <Grid item className="">
             <div className="container flex justify-center flex-col gap-4">
               <article id="welcome" >
                 <div className="container space-y-6">
@@ -111,28 +112,24 @@ export default function Home(props) {
             </div>
           </Grid>
        
-          <Grid item className="background-gradient">
+          <Grid item className="">
               <aside>
-                <div >
                   <article>
                   <Card className="bg-slate-100">
                     <div className="mb-4 flex items-center justify-between border-b border-gray-300 dark:border-gray-600">
                  <h5 className="font-medium leading-none text-gray-900 dark:text-white">
                       <strong>Latest Videos</strong>
                   </h5>
-
-
-              <a href="#" className="text-sm font-medium text-cyan-600 hover:underline dark:text-cyan-500 pb-4" >
+              <a href="#" className="text-sm font-medium transition duration-300 text-cyan-600 hover:underline dark:text-cyan-500 pb-4" >
                 View all
               </a>
-
                     </div>
                     <div className="">
               <ul className="divide-y-2 space-y-2 divide-gray-200 dark:divide-gray-700" >
               
                 <li className="flex justify-center">
                           <div className="text-sm relative">
-                            <ReactPlayer light={<Image src="/tragic-golfer.png" width={550} height={200} />} url="https://www.youtube.com/watch?v=fH9x4r2IYyM&t=170s" controls height={200} width={300}  />
+                            <ReactPlayer light={<Image src="/tragic-golfer.png" width={300} height={200} />} url="https://www.youtube.com/watch?v=fH9x4r2IYyM&t=170s" controls height={200} width={300} style={{borderRadius: '0'}}  />
                             <a 
                               href="https://www.youtube.com/watch?v=fH9x4r2IYyM&t=170s" 
                               className="font-medium text-gray-900 dark:text-white pt-2"
@@ -163,12 +160,9 @@ export default function Home(props) {
                     </div>
                   </Card>
                   </article>
-                </div>
               </aside>
- 
           </Grid>
         </Grid>
-         
       </main>
     </>
   );

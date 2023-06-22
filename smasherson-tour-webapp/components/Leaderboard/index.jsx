@@ -10,7 +10,7 @@ export default function Leaderboard({data=[], title="Leaderboard"}) {
     return(
         <div className="container mx-auto flex flex-col gap-4">
             <div className="flex justify-between items-center">
-                <h1 className="text-xl font-medium">{title}</h1>
+                <h3 className="font-medium">{title}</h3>
             </div>
           
             <Table striped>
@@ -47,7 +47,6 @@ export default function Leaderboard({data=[], title="Leaderboard"}) {
                     ))}
                 </Table.Body>
             </Table>
-            
         </div>
                                 
     )

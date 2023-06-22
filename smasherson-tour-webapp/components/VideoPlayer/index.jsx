@@ -11,6 +11,9 @@ export default function VideoPlayer({headerTitle, headerSubTitle, url, height, l
                     title={headerTitle}
                     subTitle={headerSubTitle}
                     showButton={false}
+                    titleSize="text-xl"
+                    titleWeight="semibold"
+                    style={{marginTop: -20}}
                     />
 
                 <ReactPlayer
@@ -19,6 +22,7 @@ export default function VideoPlayer({headerTitle, headerSubTitle, url, height, l
                     height={height ?? '100%'}
                     controls
                     light={light ?? false}
+                    style={{position: 'relative', top: 0, left: 0}} 
                 /> 
                 <div>
                     <Badge className="bg-red-500 text-white p-4 rounded-full inline-flex" >

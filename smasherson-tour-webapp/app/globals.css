@@ -4,7 +4,7 @@
 
 @layer base{
   body {
-    @apply dark:bg-gray-800 bg-white transition duration-200;
+    @apply dark:bg-gray-950 bg-white transition duration-200;
   }
 }
 
@@ -46,12 +46,11 @@ body{
 }
 
 .background-gradient::before{
-  background: linear-gradient(180deg,rgba(0, 80, 252, 0.376) 0,rgba(74, 101, 255, 0) 100%);
+  background: linear-gradient(180deg,rgba(0, 81, 255, 0.726) 0,rgba(74, 101, 255, 0) 100%);
   z-index: -10;
   content: "";
   position: absolute;
   inset: 0;
-  transform: scale(2);
   pointer-events: none;
 }
 

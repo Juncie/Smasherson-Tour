@@ -62,7 +62,7 @@ import { Card } from 'flowbite-react';
       </div>
 
       <div className='flex justify-center'>
-        <ActionButton label="View All Events" variant='filled' type='secondary' />
+        <ActionButton label="View All Events" type='filled' variant='secondary' />
       </div>
     
     </Card>

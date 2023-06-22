@@ -1,5 +1,4 @@
 "use client";
-import { Button } from "flowbite-react"
 
 const theme = {
         primary: {
@@ -47,7 +46,7 @@ export default function ActionButton({
                     text-center text-sm font-semibold tracking-wide 
                     shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2`}
             >
-                {label ?? "Press The Button"}
+                {label ?? "View All"}
                 {props.children}
             </button>
 
