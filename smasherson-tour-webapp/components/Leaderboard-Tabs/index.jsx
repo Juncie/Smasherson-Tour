@@ -60,9 +60,6 @@ export default function LeaderboardTabs({ tabs, pages=false, ...props }) {
               <Pagination
                 totalPages={5}
                 currentPage={currentPage}
-                onPageChange={() => setCurrentPage(currentPage + 1)}
-                ref={ref => (this.pagination = ref)}
-                totalItems={50}
               />
                           
          }
