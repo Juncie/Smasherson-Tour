@@ -3,16 +3,16 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Grid } from '@mui/material'
 import ReactPlayer from 'react-player'
-import { Avatar, Card } from 'flowbite-react'
+import { Avatar, Badge, Card } from 'flowbite-react'
 
 import VideoPlayer from '@/components/VideoPlayer'
 import LeaderboardTabs from '@/components/Leaderboard-Tabs'
+import herobg from '../public/hero-bg.png'
 
 import { AiFillFacebook } from 'react-icons/ai'
 import { AiFillTwitterSquare } from 'react-icons/ai'
 import { AiFillYoutube } from 'react-icons/ai'
 import { AiFillInstagram } from 'react-icons/ai'
-import { AiFillDingtalkSquare } from 'react-icons/ai'
 
 const VIDEO_URL = 'https://www.youtube.com/watch?v=WIEL-VfLCns'
 const VIDEO_URL2 = 'https://www.youtube.com/watch?v=fAcBo1TAGYA'
@@ -20,41 +20,62 @@ const VIDEO_URL2 = 'https://www.youtube.com/watch?v=fAcBo1TAGYA'
 export default function Home(props) {
     return (
         <>
-            <main className="mx-auto space-y-6 max-w-screen-2xl container">
-                <section id="Hero" className="">
-                    <Link href="https://toptracer.com" target="_blank">
-                        <Image
-                            src="/toptracer.webp"
-                            width={300}
-                            height={200}
-                            className="my-2 mx-auto opacity-50 contrast-50  duration-200 hover:opacity-100 hover:contrast-100 hover:grayscale-0"
-                            alt="Powered By Toptracer"
-                        />
-                    </Link>
-                    <div className="text-center space-y-6">
-                        <h1 className="text-5xl font-extrabold dark:text-white text-center">
-                            HOME OF GOLFS <br />
-                            NON-TRADITIONAL CHAMPIONS
-                        </h1>
+            <main className="mx-auto space-y-6 max-w-screen-2xl container tracking-widest">
+                <section
+                    id="Hero"
+                    className="bg-[url('../public/hero-bg.png')] py-24 min-h-full bg-cover bg-center bg-no-repeat flex flex-col justify-center items-center space-y-6"
+                >
+                    <div className="">
+                        <div className="container mx-auto text-center flex flex-col gap-8 rounded-md bg-black py-8 px-16 bg-opacity-75">
+                            <h1 className="text-7xl font-extrabold dark:text-white text-center text-white">
+                                Smash Golf Tour
+                                <br />
+                                <span className="text-5xl text-primary line-clamp-1  font-bold">
+                                    Competitive Golf League
+                                </span>
+                            </h1>
+                            <Link href="" target="_blank">
+                                <Image
+                                    src="/toptracer-logo.png"
+                                    width={400}
+                                    height={200}
+                                    className="my-2 mx-auto"
+                                    alt="Powered By Toptracer"
+                                />
+                            </Link>
+                        </div>
                     </div>
                 </section>
 
+                <div className="bg-gray-400 w-full overflow-hidden py-4">
+                    <div className="justify-start h-scroll flex flex-row gap-8">
+                        <h1>GOODGOOD</h1>
+                        <h1>BRAND 2</h1>
+                        <h1>BRAND 3</h1>
+                        <h1>BRAND 4</h1>
+                        <h1>BRAND 5</h1>
+                    </div>
+                </div>
+
                 <Grid container spacing={2} className="flex justify-center">
-                    <Grid item lg={2} className="w-full flex mx-auto">
+                    <Grid id="left" item lg={3} sm={12}>
                         <Card className="dark:bg-inherit">
                             <h3 className="font-medium">Follow Us!</h3>
-                            <ul className="flex flex-col">
-                                <li className="flex flow-row items-center">
-                                    <AiFillFacebook size={32} color="#3b5998" />
-                                    <small>Facebook</small>
+                            <ul className="flex">
+                                <li className="">
+                                    <a href="">
+                                        <AiFillFacebook
+                                            size={32}
+                                            color="#3b5998"
+                                        />
+                                    </a>
                                 </li>
-                                <li className="flex flex-row items-center">
+                                <li className="">
                                     <a href="https://meta.com">
                                         <AiFillYoutube
                                             size={32}
                                             color="#FF0000"
                                         />
-                                        <small>YouTube</small>
                                     </a>
                                 </li>
                                 <li className="w-6">
@@ -79,8 +100,35 @@ export default function Home(props) {
                         </Card>
                     </Grid>
 
-                    <Grid item className="">
+                    <Grid id="main-feed" item lg={6} sm={12}>
                         <div className="container flex justify-center flex-col gap-4">
+                            <article>
+                                <Card className="">
+                                    <div>
+                                        <h3 className="text-2xl">
+                                            <strong>
+                                                2v2 REVENGE BATTLE - TONIGHT
+                                            </strong>
+                                        </h3>
+                                        <p className='text-gray-400'>Watch J-Dawg and the Golf Kid go Head to Head for the second time!</p>
+                                    </div>
+                                    <div className="">
+                                        <Image
+                                            src="/match-1.jpg"
+                                            width={800}
+                                            height={400}
+                                        />
+                                    </div>
+                                    <div>
+                                        <small className="py-1 px-4 bg-red-600 rounded-full inline-flex justify-center">
+                                            Live at 8:00 PM EST
+                                        </small>
+                                    </div>
+                                </Card>
+                            </article>
+                            <article id="Leaderboards" className="">
+                                <LeaderboardTabs />
+                            </article>
                             <article id="welcome">
                                 <div className="container space-y-6">
                                     <VideoPlayer
@@ -92,26 +140,7 @@ export default function Home(props) {
                                     />
                                 </div>
                             </article>
-                            <article>
-                                <Card className="">
-                                    <div>
-                                        <h3>
-                                            <strong>
-                                                East Vs West Results
-                                            </strong>
-                                            <div>
-                                                <small>East Wins 3-2</small>
-                                            </div>
-                                        </h3>
-                                    </div>
-                                    <div className="border border-red-300">
-                                        <Avatar rounded />
-                                    </div>
-                                </Card>
-                            </article>
-                            <article id="Leaderboards" className="">
-                                <LeaderboardTabs />
-                            </article>
+
                             <article id="welcome">
                                 <div className="container">
                                     <VideoPlayer
@@ -119,7 +148,7 @@ export default function Home(props) {
                                             <Image
                                                 src="/tragic-golfer.png"
                                                 width={800}
-                                                height={400}
+                                                height={800}
                                             />
                                         }
                                         url={VIDEO_URL2}
@@ -132,7 +161,7 @@ export default function Home(props) {
                         </div>
                     </Grid>
 
-                    <Grid item className="">
+                    <Grid item lg={3} sm={12}>
                         <aside>
                             <article>
                                 <Card className="bg-slate-100">

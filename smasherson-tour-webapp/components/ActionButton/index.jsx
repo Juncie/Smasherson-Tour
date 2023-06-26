@@ -1,5 +1,7 @@
 'use client'
 
+import Link from 'next/link'
+
 const theme = {
     primary: {
         filled: 'bg-[#0082B5] hover:bg-blue-600 text-white',
@@ -24,22 +26,25 @@ export default function ActionButton({
     size = '' || 'sm' || 'md' || 'lg' || 'xl',
     label,
     onClick,
+    href,
     ...props
 }) {
     return (
-        <button
-            size={size}
-            onClick={onClick}
-            className={`${theme[type][variant]} 
-                    whitespace-nowrap rounded-sm 
-                    transition duration-200 
-                    py-2 px-4 
-                    inline-flex items-center justify-center 
-                    text-center text-sm font-semibold tracking-wide 
-                    shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2`}
-        >
-            {label ?? 'View All'}
-            {props.children}
-        </button>
+        <Link href={href ?? '#'}>
+            <button
+                size={size}
+                onClick={onClick}
+                className={`${theme[type][variant]}
+                        whitespace-nowrap rounded-sm
+                        transition duration-200
+                        py-2 px-4
+                        inline-flex items-center justify-center
+                        text-center text-sm tracking-widest
+                        shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2`}
+            >
+                {label ?? 'View All'}
+                {props.children}
+            </button>
+        </Link>
     )
 }

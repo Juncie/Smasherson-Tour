@@ -3,7 +3,8 @@ import { Avatar } from 'flowbite-react'
 import React, { useState } from 'react'
 import styles from './leaderboards.module.css'
 import Logo from '@/components/shared/Logo'
-function generateTestCases() {
+
+const generateTestCases = () => {
     const testCases = []
 
     for (let i = 1; i <= 100; i++) {

@@ -22,8 +22,8 @@ body{
 }
 
 .h-scroll{
-  animation: h-scrolling 10s linear infinite alternate-reverse;
-  animation-play-state: paused;
+  animation: h-scrolling 24s linear infinite;
+  animation-play-state: running;
 }
 
 .h-scroll:hover{
@@ -32,10 +32,10 @@ body{
 
 @keyframes h-scrolling {
   0% {
-    transform: translateX(calc(75%));
+    transform: translateX(calc(-28rem));
   }
   100% {
-    transform: translateX(calc(0%));
+    transform: translateX(calc(100%));
   }
 }
 

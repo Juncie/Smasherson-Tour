@@ -1,8 +1,9 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Logo({ width, height, ...props }) {
     return (
-        <div className="logo">
+        <Link href="/" className="logo">
             <Image
                 src="/logo.png"
                 width={width ?? 75}
@@ -10,6 +11,6 @@ export default function Logo({ width, height, ...props }) {
                 alt="Logo"
                 className={props.className}
             />
-        </div>
+        </Link>
     )
 }

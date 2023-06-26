@@ -48,7 +48,7 @@ export default function LeaderboardTabs({ tabs, pages = false, ...props }) {
                 title="Leaderboards"
                 titleColor="text-white"
                 titleSize="2xl"
-                btnTitle
+                btnLink="/leaderboards"
                 btnType="primary"
                 btnVariant="ghost"
                 subtitle="View the top players in each tournament."
