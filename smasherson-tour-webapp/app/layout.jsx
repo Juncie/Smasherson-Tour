@@ -1,7 +1,7 @@
 'use client'
 import './globals.css'
 import { Bayon } from 'next/font/google'
-import NavBar from '@/components/Navbar'
+import NavBar from '@/components/shared/Navbar'
 import { ThemeProvider } from 'next-themes'
 import Footer from '@/components/shared/Footer'
 
@@ -13,7 +13,7 @@ const bayon = Bayon({
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
-            <body className={[bayon.className]}>
+            <body className={`${bayon.className}`}>
                 <ThemeProvider attribute="class">
                     <NavBar />
                     {children}

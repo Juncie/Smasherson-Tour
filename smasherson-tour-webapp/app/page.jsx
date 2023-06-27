@@ -1,13 +1,12 @@
 'use client'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Grid } from '@mui/material'
 import ReactPlayer from 'react-player'
-import { Avatar, Badge, Card } from 'flowbite-react'
+import { Grid } from '@mui/material'
+import { Card } from 'flowbite-react'
 
 import VideoPlayer from '@/components/VideoPlayer'
 import LeaderboardTabs from '@/components/Leaderboard-Tabs'
-import herobg from '../public/hero-bg.png'
 
 import { AiFillFacebook } from 'react-icons/ai'
 import { AiFillTwitterSquare } from 'react-icons/ai'
@@ -23,7 +22,7 @@ export default function Home(props) {
             <main className="mx-auto space-y-6 max-w-screen-2xl container tracking-widest">
                 <section
                     id="Hero"
-                    className="bg-[url('../public/hero-bg.png')] py-24 min-h-full bg-cover bg-center bg-no-repeat flex flex-col justify-center items-center space-y-6"
+                    className="bg-[url('../public/assets/images/hero-bg.png')] py-24 min-h-full bg-cover bg-center bg-no-repeat flex flex-col justify-center items-center space-y-6"
                 >
                     <div className="">
                         <div className="container mx-auto text-center flex flex-col gap-8 rounded-md bg-black py-8 px-16 bg-opacity-75">
@@ -36,7 +35,7 @@ export default function Home(props) {
                             </h1>
                             <Link href="" target="_blank">
                                 <Image
-                                    src="/toptracer-logo.png"
+                                    src="/assets/images/toptracer-logo.png"
                                     width={400}
                                     height={200}
                                     className="my-2 mx-auto"
