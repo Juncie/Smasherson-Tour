@@ -58,7 +58,7 @@ export default function NavBar() {
 
                         <div
                             className={`${
-                                isMenuOpen ? 'flex' : 'hidden' // Add conditional class
+                                isMenuOpen ? 'flex' : 'hidden'
                             } justify-between items-center w-full lg:flex lg:w-auto lg:order-1 transition-all duration-300 ease-in-out`} // Add transition classes
                             id="mobile-menu"
                         >
