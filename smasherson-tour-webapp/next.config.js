@@ -6,6 +6,7 @@ const nextConfig = {
       "drive.google.com",
       "lh3.googleusercontent.com",
       "source.unsplash.com",
+      "via.placeholder.com",
     ],
   },
 };

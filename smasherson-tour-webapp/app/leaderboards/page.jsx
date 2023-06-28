@@ -78,53 +78,58 @@ const Leaderboard = () => {
     )
 
     return (
-        <div className="flex flex-col items-center mx-24 bg-opacity-10 relative">
+        <div className="container mx-auto">
             <h1 className="text-6xl font-bold mb-4 uppercase tracking-wider">
                 Smash Tour Leaderboard
             </h1>
 
             <div id="viewport" className="">
                 <table
-                    className="lg:min-w-[1248px] sm:max-w-md"
+                    className="lg:min-w-[1440px] sm:max-w-md flex flex-col w-full divide-y-4 divide-gray-200 div"
                     {...getTableProps()}
                 >
-                    <thead>
-                        {headerGroups.map((headerGroup) => (
-                            <tr {...headerGroup.getHeaderGroupProps()}>
-                                {headerGroup.headers.map((column) => (
-                                    <th
-                                        className={`px-6 py-8 bg-[#0082B5] text-left text-xl leading-4 font-bold text-white uppercase tracking-wider ${column.className}`}
-                                        {...column.getHeaderProps()}
-                                    >
-                                        {column.render('Header')}
-                                    </th>
-                                ))}
-                            </tr>
-                        ))}
-                    </thead>
-                    <tbody
-                        className="divide-y divide-gray-200"
-                        {...getTableBodyProps()}
+                    <div
+                        id="viewport"
+                        className="overflow-y-auto max-h-[500px]"
                     >
-                        {page.map((row) => {
-                            prepareRow(row)
-                            return (
-                                <tr
-                                    className="dark:hover:bg-gray-800 transition"
-                                    {...row.getRowProps()}
-                                >
-                                    {row.cells.map((cell) => (
-                                        <td
-                                            className={`px-6 py-4 whitespace-no-wrap ${cell.column.className} `}
-                                            {...cell.getCellProps()}
+                        <thead className="absolute z-10">
+                            {headerGroups.map((headerGroup) => (
+                                <tr {...headerGroup.getHeaderGroupProps()}>
+                                    {headerGroup.headers.map((column) => (
+                                        <th
+                                            className={`px-6 py-8 bg-[#0082B5] text-left text-xl leading-4 font-bold text-white uppercase tracking-wider ${column.className}`}
+                                            {...column.getHeaderProps()}
                                         >
-                                            {cell.render('Cell')}
-                                        </td>
+                                            {column.render('Header')}
+                                        </th>
                                     ))}
                                 </tr>
-                            )
-                        })}
-                    </tbody>
+                            ))}
+                        </thead>
+                        <tbody
+                            className="w-full divide-y divide-gray-200"
+                            {...getTableBodyProps()}
+                        >
+                            {page.map((row) => {
+                                prepareRow(row)
+                                return (
+                                    <tr
+                                        className="dark:hover:bg-gray-800 transition"
+                                        {...row.getRowProps()}
+                                    >
+                                        {row.cells.map((cell) => (
+                                            <td
+                                                className={`px-6 py-4 whitespace-no-wrap ${cell.column.className} `}
+                                                {...cell.getCellProps()}
+                                            >
+                                                {cell.render('Cell')}
+                                            </td>
+                                        ))}
+                                    </tr>
+                                )
+                            })}
+                        </tbody>
+                    </div>
                 </table>
             </div>
 
