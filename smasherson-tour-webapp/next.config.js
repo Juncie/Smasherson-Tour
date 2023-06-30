@@ -2,11 +2,9 @@
 const nextConfig = {
   images: {
     domains: [
-      "https://picsum.photos",
-      "drive.google.com",
       "lh3.googleusercontent.com",
       "source.unsplash.com",
-      "via.placeholder.com",
+      "dummyimage.com",
     ],
   },
 };
