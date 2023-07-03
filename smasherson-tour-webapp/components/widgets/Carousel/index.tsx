@@ -9,16 +9,25 @@ import Slide from './CarouselSlide'
 import { SlideType } from './CarouselSlide'
 
 interface CarouselProps {
-    slides: SlideType[]
+    data: SlideType[]
 }
 
-const Carousel: React.FC<CarouselProps> = ({ slides }) => {
+const Carousel: React.FC<CarouselProps> = ({ data }: CarouselProps) => {
     const [slideIndex, setSlideIndex] = useState(0)
+    const [slides, setSlides] = useState<SlideType[]>([])
+
+    useEffect(() => {
+        if (data) {
+            setSlides(data)
+        } else {
+            setSlides(demoProps.data)
+        }
+    }, [data])
 
     return (
         <>
             <Swiper
-                spaceBetween={30}
+                spaceBetween={0}
                 slidesPerView={1}
                 pagination={{
                     clickable: true,
@@ -30,10 +39,10 @@ const Carousel: React.FC<CarouselProps> = ({ slides }) => {
                 centerInsufficientSlides={true}
                 centeredSlides={true}
                 modules={[Pagination, Navigation]}
-                className="mySwiper flex flex-col justify-center"
+                className="mySwiper flex flex-col justify-center mb-4 mx-auto"
             >
                 {slides.map((slide) => (
-                    <SwiperSlide key={slide.id}>
+                    <SwiperSlide key={slide.id} className="">
                         <Slide
                             imageURL={slide.imageURL}
                             slideAction1={slide.slideAction1}
@@ -52,3 +61,38 @@ const Carousel: React.FC<CarouselProps> = ({ slides }) => {
 }
 
 export default Carousel
+
+const demoProps: CarouselProps = {
+    data: [
+        {
+            id: 1,
+            slideTitle: 'Smash Golf Tour',
+            slideSubtitle: 'Subtitle 1',
+            imageURL: 'https://dummyimage.com/1250x750/000/000',
+        },
+        {
+            id: 2,
+            slideTitle: 'Slide 2',
+            slideSubtitle: 'Subtitle 2',
+            imageURL: 'https://dummyimage.com/1250x750/000/000',
+        },
+        {
+            id: 3,
+            slideTitle: 'Slide 3',
+            slideSubtitle: 'Subtitle 3',
+            imageURL: 'https://dummyimage.com/1250x750/000/000/',
+        },
+        {
+            id: 4,
+            slideTitle: 'Slide 4',
+            slideSubtitle: 'Subtitle 4',
+            imageURL: 'https://dummyimage.com/1250x750/000/000/',
+        },
+        {
+            id: 5,
+            slideTitle: 'Slide 5',
+            slideSubtitle: 'Subtitle 5',
+            imageURL: 'https://dummyimage.com/1250x750/000/000/',
+        },
+    ],
+}
