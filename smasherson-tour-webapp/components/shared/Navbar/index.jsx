@@ -17,7 +17,7 @@ export default function NavBar({ items: { navItems, socialItems } }) {
         <>  
             <header className="sticky top-0 z-30 flex items-center justify-between py-2 px-24 dark:bg-opacity-95 bg-white dark:bg-gray-800 lg:rounded-b-md">
                     <Logo width={110} height={110} />
-                    <nav className="border-gray-200 flex justify-between px-4 lg:px-6 lg:order-2 sm:order-3">
+                    <nav className="border-gray-200 flex justify-between px-4 tracking-wider uppercase lg:px-6 lg:order-2 sm:order-3">
                         <div className="flex flex-wrap mx-auto max-w-screen-xl">
                             <div className="flex items-center lg:order-2">
                                 <button

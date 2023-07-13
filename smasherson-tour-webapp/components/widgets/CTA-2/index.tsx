@@ -8,10 +8,12 @@ export default function CTA_2() {
         <div className='flex flex-row-reverse gap-8'>
             <div className='basis-2/3'>
                 <Balancer className='uppercase w-full'>
-                        <span className="text-[32px]">Home of the non traditional</span>
+                        <span className="text-[32px]">
+                            Earn Smash Cash for the
+                        </span>
                         <br/>
                         <span className='text-[64px] tracking-wider text-blue-600'>
-                            Golf Champion
+                            Smash Store
                         </span>
                 </Balancer>
                 <Balancer className='space-y-8'>
