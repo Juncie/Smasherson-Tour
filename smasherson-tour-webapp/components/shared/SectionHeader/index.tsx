@@ -4,11 +4,13 @@ import React from 'react'
 export interface SectionHeaderProps {
     title: string
     titleSize?: titleSize
-    subtitle: string
+    subtitle?: string
     subTitleSize?: titleSize
     actionTitle?: string
     actionURL?: string
     border?: boolean
+    className?: string
+    titleClass?: string
 }
 
 type titleSize =
@@ -32,6 +34,8 @@ export default function SectionHeader(props: SectionHeaderProps) {
         actionTitle,
         actionURL,
         border = false,
+        className,
+        titleClass
     } = props
 
     return (
@@ -39,10 +43,11 @@ export default function SectionHeader(props: SectionHeaderProps) {
             className={`
                 flex justify-between container mx-auto pb-2 
                 ${border && 'border-b-2'}
+                ${className && className}
             `}
         >
             <div>
-                <h2 className={`text-${titleSize} font-semibold`}>{title}</h2>
+                <h2 className={`text-${titleSize} font-semibold ${titleClass && titleClass}`}>{title}</h2>
                 <p className={`text-md ${subTitleSize}`}>{subtitle}</p>
             </div>
             <div className="flex gap-2 items-center">

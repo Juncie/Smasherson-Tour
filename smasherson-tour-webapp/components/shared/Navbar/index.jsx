@@ -8,19 +8,16 @@ import { navLinks, socialLinks } from './data.navbar'
 export default function NavBar({ items: { navItems, socialItems } }) {
     const [isMenuOpen, setIsMenuOpen] = useState(false) // Add state variables
 
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen)
-    }
-
+    const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+    
     const linkStyle =
         'block text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 lg:text-2xl dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700'
 
     return (
-        <>
-            <div className="container mx-auto flex justify-center items-center">
-                <header className="absolute top-4 z-30 flex py-2 px-8 dark:bg-opacity-95 bg-white dark:bg-gray-800 items-center justify-between lg:rounded-md lg:w-5/6 sm:w-full">
+        <>  
+            <header className="sticky top-0 z-30 flex items-center justify-between py-2 px-24 dark:bg-opacity-95 bg-white dark:bg-gray-800 lg:rounded-b-md">
                     <Logo width={110} height={110} />
-                    <nav className="border-gray-200 flex justify-between px-4 lg:px-6">
+                    <nav className="border-gray-200 flex justify-between px-4 lg:px-6 lg:order-2 sm:order-3">
                         <div className="flex flex-wrap mx-auto max-w-screen-xl">
                             <div className="flex items-center lg:order-2">
                                 <button
@@ -85,10 +82,11 @@ export default function NavBar({ items: { navItems, socialItems } }) {
                             </div>
                         </div>
                     </nav>
-                    <ThemeButton />
+                    <div className="lg:order-3 sm:order-2">
+                        <ThemeButton />
+                    </div>
                 </header>
-            </div>
-        </>
+            </>
     )
 }
 

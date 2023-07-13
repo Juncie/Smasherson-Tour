@@ -7,6 +7,7 @@ import 'swiper/swiper-bundle.css'
 import Image from 'next/image'
 import Slide from './CarouselSlide'
 import { SlideType } from './CarouselSlide'
+import Hero from '../Hero'
 
 interface CarouselProps {
     data: SlideType[]
@@ -41,18 +42,9 @@ const Carousel: React.FC<CarouselProps> = ({ data }: CarouselProps) => {
                 modules={[Pagination, Navigation]}
                 className="mySwiper flex flex-col justify-center mb-4 mx-auto"
             >
-                {slides.map((slide) => (
-                    <SwiperSlide key={slide.id} className="">
-                        <Slide
-                            imageURL={slide.imageURL}
-                            slideAction1={slide.slideAction1}
-                            slideAction1URL={slide.slideAction1URL}
-                            slideAction2={slide.slideAction2}
-                            slideAction2URL={slide.slideAction2URL}
-                            slideSubtitle={slide.slideSubtitle}
-                            slideTitle={slide.slideTitle}
-                            slug={slide.slug}
-                        />
+                {slides.map(({children}, index) => (
+                    <SwiperSlide key={index} className="">
+                        <Slide children={children} />
                     </SwiperSlide>
                 ))}
             </Swiper>
@@ -64,35 +56,15 @@ export default Carousel
 
 const demoProps: CarouselProps = {
     data: [
-        {
-            id: 1,
-            slideTitle: 'Smash Golf Tour',
-            slideSubtitle: 'Subtitle 1',
-            imageURL: 'https://dummyimage.com/1250x750/000/000',
-        },
-        {
-            id: 2,
-            slideTitle: 'Slide 2',
-            slideSubtitle: 'Subtitle 2',
-            imageURL: 'https://dummyimage.com/1250x750/000/000',
-        },
-        {
-            id: 3,
-            slideTitle: 'Slide 3',
-            slideSubtitle: 'Subtitle 3',
-            imageURL: 'https://dummyimage.com/1250x750/000/000/',
-        },
-        {
-            id: 4,
-            slideTitle: 'Slide 4',
-            slideSubtitle: 'Subtitle 4',
-            imageURL: 'https://dummyimage.com/1250x750/000/000/',
-        },
-        {
-            id: 5,
-            slideTitle: 'Slide 5',
-            slideSubtitle: 'Subtitle 5',
-            imageURL: 'https://dummyimage.com/1250x750/000/000/',
-        },
+      {
+        children: <Hero />
+      },
+      {
+        children: (
+            <h1>
+                Hellow World
+            </h1>
+        )
+      }
     ],
 }

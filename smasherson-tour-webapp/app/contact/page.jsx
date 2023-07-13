@@ -19,7 +19,6 @@ export default function ContactPage() {
                             title="map"
                             marginheight="0"
                             marginwidth="0"
-                            scrolling="no"
                             src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=%C4%B0zmir+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed"
                         />
                         <div className="bg-white relative flex flex-wrap py-6 rounded shadow-md">

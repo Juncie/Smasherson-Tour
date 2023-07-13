@@ -1,5 +1,7 @@
 'use client'
+import React from 'react'
 import { useRouter } from 'next/navigation'
+
 export default function EventDetailsPage(props) {
     const router = useRouter()
     return (

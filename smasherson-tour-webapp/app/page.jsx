@@ -1,46 +1,35 @@
 'use client'
 import Image from 'next/image'
+import { Balancer } from 'react-wrap-balancer'
+
 import CarouselSlider from '@/components/widgets/Carousel'
+import EventsSlider from '@/components/widgets/EventsSlider'
+import CTA_1 from '@/components/widgets/CTA-1'
+import CTA_2 from '@/components/widgets/CTA-2'
 
 export default function Home(props) {
     return (
         <>
-            <main className="tracking-widest space-y-16">
+            <main className="tracking-widest">
                 <CarouselSlider />
-                <div className="container mx-auto">
-                    <div className="flex flex-col py-8 justify-center items-center outline bg-[url('../public/assets/images/hero-bg.png')] bg-cover bg-center">
-                        <div
-                            id="row-1"
-                            className="flex flex-row gap-4 justify-center"
-                        >
-                            <div id="screen" className="flex justify-end">
-                                <Image
-                                    src="/assets/images/hero-screen.png"
-                                    width={400}
-                                    height={300}
-                                />
-                            </div>
-                            <div id="golfer" className="flex-1">
-                                <Image
-                                    src="/assets/images/hero-golfer-2.png"
-                                    width={650}
-                                    height={300}
-                                    className="max-h-96 object-contain"
-                                />
-                            </div>
-                        </div>
-                        <div id="row-2">
-                            <div id="wrapper">
-                                <h1 className="uppercase text-[128px] flex flex-col gap-2 justify-center items-center">
-                                    <strong>Smash Golf Tour</strong>
-                                    <span className="bg-blue text-6xl text-gray-900 bg-blue-500 px-16 zzz py-2 rounded-tl-2xl rounded-br-2xl">
-                                        Play. Complete. Win.
-                                    </span>
-                                </h1>
-                            </div>
-                        </div>
-                    </div>
+                <div className="flex flex-col items-center justify-center py-16">
+                    <Image
+                        src="/assets/images/toptracer-logo.png"
+                        alt="Smasherson Logo"
+                        width={600}
+                        height={600}
+                        className='object-contain '
+                    />
                 </div>
+                <section className='dark:bg-gray-900 bg-gray-300 py-24'>
+                    <EventsSlider />
+                </section>
+                <section className='container mx-auto py-16'>
+                    <CTA_1 />
+                </section>
+                <section className='container mx-auto py-16'>
+                    <CTA_2 />
+                </section>
             </main>
         </>
     )

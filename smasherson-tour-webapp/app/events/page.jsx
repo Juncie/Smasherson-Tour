@@ -1,13 +1,13 @@
 'use client'
 import { useEffect, useState } from 'react'
 
-const eventsPlaceHolderData = [
+export const eventsPlaceHolderData = [
     {
         id: 1,
         eventName: 'Long Drive',
         date: '2023-07-15',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        imageUrl: 'https://example.com/image1.jpg',
+        imageUrl: 'https://source.unsplash.com/random/800x600?golf-balls',
         slug: 'long-drive',
     },
     {
@@ -15,8 +15,8 @@ const eventsPlaceHolderData = [
         eventName: 'Closest to the Pin',
         date: '2023-08-10',
         description:
-            'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-        imageUrl: 'https://example.com/image2.jpg',
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        imageUrl: 'https://source.unsplash.com/random/800x600?golf-course',
         slug: 'clostest-to-the-pin',
     },
     {
@@ -24,8 +24,8 @@ const eventsPlaceHolderData = [
         eventName: 'Longest Putt',
         date: '2023-09-05',
         description:
-            'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-        imageUrl: 'https://example.com/image3.jpg',
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        imageUrl: 'https://source.unsplash.com/random/800x600?golfer',
         slug: 'longest-putt',
     },
     {
@@ -33,8 +33,8 @@ const eventsPlaceHolderData = [
         eventName: '2v2s',
         date: '2023-10-01',
         description:
-            'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-        imageUrl: 'https://example.com/image4.jpg',
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        imageUrl: 'https://source.unsplash.com/random/800x600?golf',
         slug: '2v2s',
     },
     {
@@ -42,8 +42,8 @@ const eventsPlaceHolderData = [
         eventName: '3v3s',
         date: '2023-10-01',
         description:
-            'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-        imageUrl: 'https://example.com/image4.jpg',
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        imageUrl: 'https://source.unsplash.com/random/800x600?golf-player',
         slug: '3v3s',
     },
     {
@@ -51,8 +51,8 @@ const eventsPlaceHolderData = [
         eventName: 'East vs West',
         date: '2023-10-01',
         description:
-            'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-        imageUrl: 'https://example.com/image4.jpg',
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        imageUrl: 'https://source.unsplash.com/random/800x600?golf-tournament',
         slug: 'east-vs-west',
     },
 
@@ -63,7 +63,7 @@ const EventsPage = ({ data = [] }) => {
     const [eventsData, setEventsData] = useState([])
 
     useEffect(() => {
-        setEventsData(data)
+        setEventsData(eventsPlaceHolderData)
     }, [data])
 
     return (
