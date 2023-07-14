@@ -1,6 +1,6 @@
 'use client'
 
-import LeaderboardTable from "@/components/widgets/LeaderboardTable"
+import LeaderboardTable from '@/components/widgets/LeaderboardTable'
 
 const generateTestCases = () => {
     const testCases = []
@@ -20,9 +20,9 @@ const generateTestCases = () => {
 }
 
 export default function Leaderboard() {
-    return(
+    return (
         <>
-            <main className="tracking-widest space-y-16 container mx-auto flex flex-col gap-4 justify-center">
+            <main className="container mx-auto flex flex-col justify-center">
                 <LeaderboardTable data={generateTestCases()} />
             </main>
         </>

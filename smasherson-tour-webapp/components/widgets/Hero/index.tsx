@@ -7,7 +7,7 @@ export default function Hero() {
         <>
             <div className="flex h-full outline items-center justify-center bg-[url('../public/assets/images/hero-bg.png')] bg-cover bg-center">
                 <div className="flex flex-col py-8 justify-center items-center ">
-                    <div className="-mt-10">
+                    <div className="-mt-14">
                         <Image
                             src="/assets/images/hero-image.png"
                             width={1000}
@@ -16,7 +16,7 @@ export default function Hero() {
                         />
                     </div>
 
-                    <div id="row-2">
+                    <div id="row-2" className="z-20 -mt-[6rem]">
                         <div id="wrapper">
                             <Balancer className="">
                                 <h1 className="uppercase tracking-wider text-7xl flex flex-col gap-2 justify-center items-center">
