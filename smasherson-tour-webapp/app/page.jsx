@@ -1,9 +1,6 @@
 'use client'
 import Image from 'next/image'
-import { Balancer } from 'react-wrap-balancer'
 
-import CarouselSlider from '@/components/widgets/Carousel'
-import EventsSlider from '@/components/widgets/EventsSlider'
 import CTA_1 from '@/components/widgets/CTA-1'
 import CTA_2 from '@/components/widgets/CTA-2'
 import Hero from '@/components/widgets/Hero'
@@ -23,7 +20,7 @@ export default function Home(props) {
                     />
                 </div>
                 <section className="dark:bg-gray-900 bg-gray-300 py-24">
-                    <EventsSlider />
+                    {/* <EventsSlider /> */}
                 </section>
                 <section className="pt-16 bg-gray-700">
                     <div className="container mx-auto">

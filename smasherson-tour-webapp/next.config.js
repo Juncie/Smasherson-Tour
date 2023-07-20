@@ -4,8 +4,7 @@ const nextConfig = {
     domains: [
       "lh3.googleusercontent.com",
       "source.unsplash.com",
-      "dummyimage.com",
-      "example.com",
+      "sa-front-end.s3.amazonaws.com"
     ],
   },
 };
