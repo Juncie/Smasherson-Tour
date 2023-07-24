@@ -2,9 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react'
 import { Navigation, Pagination } from 'swiper'
-import { FiChevronRight, FiChevronLeft } from 'react-icons/fi'
 import 'swiper/swiper-bundle.css'
-import Image from 'next/image'
 import Slide from './CarouselSlide'
 import { SlideType } from './CarouselSlide'
 import Hero from '../Hero'
@@ -42,7 +40,7 @@ const Carousel: React.FC<CarouselProps> = ({ data }: CarouselProps) => {
                 modules={[Pagination, Navigation]}
                 className="mySwiper flex flex-col justify-center mb-4 mx-auto"
             >
-                {slides.map(({children}, index) => (
+                {slides.map(({ children }, index) => (
                     <SwiperSlide key={index} className="">
                         <Slide children={children} />
                     </SwiperSlide>
@@ -56,15 +54,11 @@ export default Carousel
 
 const demoProps: CarouselProps = {
     data: [
-      {
-        children: <Hero />
-      },
-      {
-        children: (
-            <h1>
-                Hellow World
-            </h1>
-        )
-      }
+        {
+            children: <Hero />,
+        },
+        {
+            children: <h1>Hellow World</h1>,
+        },
     ],
 }

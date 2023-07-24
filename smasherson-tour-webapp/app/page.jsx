@@ -4,6 +4,7 @@ import Image from 'next/image'
 import CTA_1 from '@/components/widgets/CTA-1'
 import CTA_2 from '@/components/widgets/CTA-2'
 import Hero from '@/components/widgets/Hero'
+// import EventsSlider from '@/components/widgets/EventsSlider'
 
 export default function Home(props) {
     return (
