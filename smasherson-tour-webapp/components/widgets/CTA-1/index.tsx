@@ -6,7 +6,7 @@ import { Balancer } from 'react-wrap-balancer'
 export default function CTA_1() {
     return (
         <div className="flex container mx-auto">
-            <div className="basis-2/3 space-y-4">
+            <div className="basis-1/2 space-y-4">
                 <Balancer className="uppercase w-full">
                     <span className="text-3xl">
                         Home of the non traditional
@@ -17,11 +17,12 @@ export default function CTA_1() {
                     </span>
                 </Balancer>
                 <p className="space-y-8">
-                    <Balancer className="">
+                    <Balancer className="max-w-lg">
                         Use your own clubs, real balls, outdoor ranges, and
                         Toptracer technology via the Smashers ON App.
                     </Balancer>
-                    <Balancer className="max-w-md">
+                    <br />
+                    <Balancer className="max-w-lg min-w-lg">
                         Say goodbye to the traditional golf course and hello to
                         the future of golf.
                     </Balancer>

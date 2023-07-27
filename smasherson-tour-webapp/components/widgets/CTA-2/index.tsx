@@ -36,15 +36,15 @@ export default function CTA_2() {
                         href="/about"
                         className="py-4 px-8 uppercase bg-blue-600 hover:bg-blue-700 rounded-md inline-flex items-center justify-center transition duration-150"
                     >
-                        <span className="text-2xl">Get Started</span>
+                        <span className="text-2xl">Visit the Smash Store</span>
                     </Link>
                 </div>
             </div>
             <div className="">
                 <Image
                     src="/assets/images/hero-image.png"
-                    width={800}
-                    height={800}
+                    width={1000}
+                    height={1000}
                     alt="Smash Golf Tour"
                 ></Image>
             </div>

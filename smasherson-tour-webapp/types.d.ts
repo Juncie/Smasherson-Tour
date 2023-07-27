@@ -1,4 +1,4 @@
-export type Event = {
+export type EventProps = {
     id: number
     name: string
     event_type?: string

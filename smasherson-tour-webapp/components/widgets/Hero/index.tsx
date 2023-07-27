@@ -2,7 +2,21 @@ import Image from 'next/image'
 import React from 'react'
 import { Balancer } from 'react-wrap-balancer'
 
-export default function Hero() {
+interface HeroProps {
+    title: string
+    subtitle: string
+    image?: string
+    image2?: string
+    buttonTitle?: string
+    buttonURL?: string
+    buttonTitle2?: string
+    buttonURL2?: string
+    className?: string
+    titleClass?: string
+    subtitleClass?: string
+}
+
+export default function Hero(props: HeroProps) {
     return (
         <>
             <div className="flex h-full items-center justify-center bg-[url('../public/assets/images/hero-bg.png')] bg-cover bg-center">
@@ -19,17 +33,21 @@ export default function Hero() {
                     <div id="row-2" className="z-20 -mt-[6rem]">
                         <div id="wrapper">
                             <h1>
-                                <Balancer className="flex flex-col justify-center items-center space-y-4">
-                                    <div className="flex items-center justify-center uppercase tracking-wider text-7xl">
-                                        <strong>Smash Golf Tour</strong>
+                                <section className="flex flex-col justify-center items-center space-y-4">
+                                    <div className="flex items-center justify-center uppercase tracking-wider text-8xl text-white">
+                                        <strong>
+                                            <Balancer>{props.title}</Balancer>
+                                        </strong>
                                     </div>
 
                                     <div className="flex items-center justify-center">
-                                        <span className="uppercase bg-blue text-6xl text-gray-900 bg-blue-500 px-16 py-6 rounded-tl-3xl rounded-br-3xl">
-                                            Play. Compete. Win.
+                                        <span className="uppercase bg-blue text-7xl text-gray-900 bg-blue-500 px-[8rem] py-6 rounded-tl-3xl rounded-br-3xl">
+                                            <Balancer>
+                                                {props.subtitle}
+                                            </Balancer>
                                         </span>
                                     </div>
-                                </Balancer>
+                                </section>
                             </h1>
                         </div>
                     </div>

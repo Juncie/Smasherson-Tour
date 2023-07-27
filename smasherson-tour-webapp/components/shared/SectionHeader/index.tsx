@@ -35,7 +35,7 @@ export default function SectionHeader(props: SectionHeaderProps) {
         actionURL,
         border = false,
         className,
-        titleClass
+        titleClass,
     } = props
 
     return (
@@ -47,7 +47,13 @@ export default function SectionHeader(props: SectionHeaderProps) {
             `}
         >
             <div>
-                <h2 className={`text-${titleSize} font-semibold ${titleClass && titleClass}`}>{title}</h2>
+                <h2
+                    className={`text-${titleSize} font-semibold ${
+                        titleClass && titleClass
+                    }`}
+                >
+                    {title}
+                </h2>
                 <p className={`text-md ${subTitleSize}`}>{subtitle}</p>
             </div>
             <div className="flex gap-2 items-center">
