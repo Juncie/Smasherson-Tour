@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react' // Import the useState hook
+import { useState } from 'react'
 import ThemeButton from '../ThemeButton'
 import Link from 'next/link'
 import Logo from '../Logo'
@@ -13,7 +13,7 @@ export default function NavBar({ navLinks }) {
     return (
         <>
             <header className="sticky top-0 z-30 flex items-center justify-between py-2 px-24 dark:bg-opacity-95 bg-white dark:bg-gray-800 lg:rounded-b-md">
-                <Logo width={110} height={110} />
+                <Logo width={140} height={140} />
                 <nav className="border-gray-200 flex justify-between px-4 tracking-wider uppercase lg:px-6 lg:order-2 sm:order-3">
                     <div className="flex flex-wrap mx-auto max-w-screen-xl">
                         <div className="flex items-center lg:order-2">
@@ -74,8 +74,20 @@ export default function NavBar({ navLinks }) {
                         </div>
                     </div>
                 </nav>
-                <div className="lg:order-3 sm:order-2">
-                    <ThemeButton />
+                <div className="lg:order-3 flex gap-4 uppercase tracking-wide">
+                    <Link
+                        className="outline outline-2 outline-teal-400 px-8 py-4"
+                        href="/login"
+                    >
+                        {' '}
+                        Login{' '}
+                    </Link>
+                    <Link
+                        className="outline outline-2 outline-blue-400 px-8 py-4"
+                        href={'/signup'}
+                    >
+                        Sign Up
+                    </Link>
                 </div>
             </header>
         </>

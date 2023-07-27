@@ -19,13 +19,14 @@ export default function CTA_2() {
                     </Balancer>
                 </h3>
                 <p>
-                    <Balancer className="space-y-8">
+                    <Balancer>
                         Use your own clubs, real balls, outdoor ranges, and
                         Toptracer technology via the Smashers ON App.
                     </Balancer>
                 </p>
+                <br />
                 <p>
-                    <Balancer>
+                    <Balancer className="max-w-md">
                         Say goodbye to traditional golf hassles and hello to
                         elevate your game!
                     </Balancer>

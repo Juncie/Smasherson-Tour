@@ -1,10 +1,12 @@
 'use client'
-import React, { useState, useEffect, use } from 'react'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import SwiperCore, { Navigation, A11y } from 'swiper'
+import React from 'react'
 import useSWR from 'swr'
 
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Navigation, A11y } from 'swiper'
 import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/a11y'
 
 import SectionHeader from '@/components/shared/SectionHeader'
 import EventsCard from '@/components/widgets/EventsCard'
@@ -25,7 +27,7 @@ export default function EventsSlider() {
     if (error) return <div>Error: {error.message}</div>
     if (!data)
         return (
-            <div className="container w-screen h-96 mx-auto flex justify-center items-center text-3xl transition-all duration-200">
+            <div className="container w-screen lg:h-[400px] mx-auto flex justify-center items-center text-3xl transition-all duration-200">
                 Loading Events...
             </div>
         )
@@ -43,7 +45,7 @@ export default function EventsSlider() {
 
             <div className="container flex flex-row mx-auto w-full">
                 <Swiper
-                    slidesPerView={3}
+                    slidesPerView={2}
                     modules={[Navigation, A11y]}
                     navigation
                     breakpoints={{
@@ -51,7 +53,7 @@ export default function EventsSlider() {
                             slidesPerView: 1,
                         },
                         768: {
-                            slidesPerView: 3,
+                            slidesPerView: 2,
                         },
                     }}
                 >

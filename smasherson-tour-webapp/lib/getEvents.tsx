@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react'
 import { smashersAPI } from '@/utils/APIInterceptor'
 import useSWR from 'swr'
 import { EventProps } from '@/types'
@@ -37,9 +36,7 @@ const getEvents = (payload: {
         return { events: [], error: error.message }
     }
 
-    if (!data) {
-        return { events: [], loading: true }
-    }
+    if (!data) return { events: [], loading: true }
 
     // Return the filtered events data
     return { events: data }

@@ -23,11 +23,16 @@ export const navLinks = [
     },
     {
         id: 4,
+        name: 'Videos',
+        url: '/videos',
+    },
+    {
+        id: 5,
         name: 'Leaderboards',
         url: '/leaderboards',
     },
     {
-        id: 5,
+        id: 6,
         name: 'Contact',
         url: '/contact',
     },

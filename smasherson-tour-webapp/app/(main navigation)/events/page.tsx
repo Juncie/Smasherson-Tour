@@ -2,7 +2,7 @@
 import React from 'react'
 import useSWR from 'swr'
 
-import EventsCard from '../../components/widgets/EventsCard/'
+import EventsCard from '../../../components/widgets/EventsCard'
 import { EventProps } from '@/types'
 
 const fetcher = async (url: string) => {
@@ -16,7 +16,7 @@ export default function EventsPage(): JSX.Element {
     const [perPage, setPerPage] = React.useState(10)
     const [searchTerm, setSearchTerm] = React.useState('')
 
-    const API_URL = `https://staging-be.smasherson.com/api/v1/events/?page=${currentPage}&per_page=${perPage}&term=${searchTerm}`
+    const API_URL = `https://be.smasherson.com/api/v1/events/?page=${currentPage}&per_page=${perPage}&term=${searchTerm}`
 
     const { data, error } = useSWR(API_URL, fetcher)
 

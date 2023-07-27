@@ -32,7 +32,8 @@
         "**/*.ts",
         "**/*.tsx",
         "lib/fetcher.jsx",
-        "lib/getEvents.tsx"
+        "lib/getEvents.tsx",
+        "app/api/events/route.jsx"
     ],
     "exclude": ["node_modules"]
 }

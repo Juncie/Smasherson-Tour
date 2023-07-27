@@ -7,15 +7,15 @@ export default function CTA_1() {
     return (
         <div className="flex container mx-auto">
             <div className="basis-1/2 space-y-4">
-                <Balancer className="uppercase w-full">
-                    <span className="text-3xl">
-                        Home of the non traditional
+                <section className="uppercase w-full">
+                    <span className="text-3xl pb-2">
+                        <Balancer>Home of the non-traditional</Balancer>
                     </span>
                     <br />
                     <span className="text-6xl tracking-wider text-[#ffa500]">
-                        Golf Champion
+                        <Balancer>Golf Champion</Balancer>
                     </span>
-                </Balancer>
+                </section>
                 <p className="space-y-8">
                     <Balancer className="max-w-lg">
                         Use your own clubs, real balls, outdoor ranges, and
