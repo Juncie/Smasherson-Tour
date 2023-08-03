@@ -13,10 +13,10 @@ const fetcher = async (url: string) => {
 
 export default function EventsPage(): JSX.Element {
     const [currentPage, setCurrentPage] = React.useState(1)
-    const [perPage, setPerPage] = React.useState(10)
+    const [perPage, setPerPage] = React.useState(9)
     const [searchTerm, setSearchTerm] = React.useState('')
 
-    const API_URL = `https://be.smasherson.com/api/v1/events/?page=${currentPage}&per_page=${perPage}&term=${searchTerm}`
+    const API_URL = `https://staging-be.smasherson.com/api/v1/events/?page=${currentPage}&per_page=${perPage}&term=${searchTerm}`
 
     const { data, error } = useSWR(API_URL, fetcher)
 
@@ -31,10 +31,7 @@ export default function EventsPage(): JSX.Element {
     return (
         <div className="w-full mt-16">
             <div className="container mx-auto">
-                <h1 className="text-6xl text-center font-bold tracking-wider uppercase">
-                    Smash Tour Events
-                </h1>
-                <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full pt-16">
+                <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full pt-8">
                     {data.data &&
                         data.data.map((event: EventProps) => (
                             <li key={event.id} className="outline rounded-md">

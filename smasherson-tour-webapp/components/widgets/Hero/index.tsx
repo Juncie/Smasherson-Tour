@@ -14,6 +14,7 @@ interface HeroProps {
     className?: string
     titleClass?: string
     subtitleClass?: string
+    imgSrc?: string
 }
 
 export default function Hero(props: HeroProps) {
@@ -23,7 +24,9 @@ export default function Hero(props: HeroProps) {
                 <div className="flex flex-col py-8 justify-center items-center ">
                     <div className="-mt-14">
                         <Image
-                            src="/assets/images/hero-image.png"
+                            src={
+                                props.imgSrc || '/assets/images/hero-image.png'
+                            }
                             width={1000}
                             height={1000}
                             alt="Smash Golf Tour"

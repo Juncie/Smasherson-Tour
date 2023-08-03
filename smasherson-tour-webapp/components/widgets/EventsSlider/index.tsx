@@ -45,7 +45,7 @@ export default function EventsSlider() {
 
             <div className="container flex flex-row mx-auto w-full">
                 <Swiper
-                    slidesPerView={2}
+                    slidesPerView={3}
                     modules={[Navigation, A11y]}
                     navigation
                     breakpoints={{
@@ -53,7 +53,7 @@ export default function EventsSlider() {
                             slidesPerView: 1,
                         },
                         768: {
-                            slidesPerView: 2,
+                            slidesPerView: 3,
                         },
                     }}
                 >

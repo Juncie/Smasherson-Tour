@@ -19,8 +19,8 @@ export default function EventsCard({ id, name, event_poster, start, end }) {
             <Image
                 src={event_poster}
                 alt={name}
-                width={800}
-                height={800}
+                width={600}
+                height={600}
                 className={`mb-4`}
             />
             <div className="text-justify w-full space-y-4 flex justify-between flex-col max-h-24">

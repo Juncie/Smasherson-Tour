@@ -17,12 +17,12 @@ export default function CTA_1() {
                     </span>
                 </section>
                 <p className="space-y-8">
-                    <Balancer className="max-w-lg">
+                    <Balancer className="max-w-lg font-sans">
                         Use your own clubs, real balls, outdoor ranges, and
                         Toptracer technology via the Smashers ON App.
                     </Balancer>
                     <br />
-                    <Balancer className="max-w-lg min-w-lg">
+                    <Balancer className="max-w-lg min-w-lg font-sans lg:text-lg">
                         Say goodbye to the traditional golf course and hello to
                         the future of golf.
                     </Balancer>

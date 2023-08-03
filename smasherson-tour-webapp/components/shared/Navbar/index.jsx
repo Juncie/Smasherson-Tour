@@ -3,8 +3,11 @@ import { useState } from 'react'
 import ThemeButton from '../ThemeButton'
 import Link from 'next/link'
 import Logo from '../Logo'
+import { useUserContext } from '@/context/UserContext'
+import { Avatar } from 'flowbite-react'
 
 export default function NavBar({ navLinks }) {
+    const { user } = useUserContext()
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
     const linkStyle =
@@ -74,21 +77,26 @@ export default function NavBar({ navLinks }) {
                         </div>
                     </div>
                 </nav>
-                <div className="lg:order-3 flex gap-4 uppercase tracking-wide">
-                    <Link
-                        className="outline outline-2 outline-teal-400 px-8 py-4"
-                        href="/login"
-                    >
-                        {' '}
-                        Login{' '}
-                    </Link>
-                    <Link
-                        className="outline outline-2 outline-blue-400 px-8 py-4"
-                        href={'/signup'}
-                    >
-                        Sign Up
-                    </Link>
-                </div>
+                {!user ? (
+                    <div className="lg:order-3 flex gap-4 uppercase tracking-wide">
+                        <Link
+                            className="outline outline-2 outline-teal-400 hover:bg-opacity-50 hover:bg-teal-300 px-8 py-4 transition-all duration-150 ease-in-out"
+                            href="/login"
+                        >
+                            Login
+                        </Link>
+                        <Link
+                            className="outline outline-2 outline-blue-400 px-8 py-4 hover:bg-opacity-50 hover:bg-blue-300 transition-all duration-150 ease-in-out"
+                            href="/register"
+                        >
+                            Sign Up
+                        </Link>
+                    </div>
+                ) : (
+                    <div className="lg:order-last">
+                        <Avatar rounded size="md" placeholderInitials="BM" />
+                    </div>
+                )}
             </header>
         </>
     )

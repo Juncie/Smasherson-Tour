@@ -5,14 +5,17 @@ import CTA_1 from '@/components/widgets/CTA-1'
 import CTA_2 from '@/components/widgets/CTA-2'
 import Hero from '@/components/widgets/Hero'
 import EventsSlider from '@/components/widgets/EventsSlider'
-import SectionHeader from '@/components/shared/SectionHeader'
 import Link from 'next/link'
-
+import AboutSection from '@/components/widgets/AboutSection/page'
 export default function Home() {
     return (
         <>
             <main className="tracking-widest">
-                <Hero title="Smash Golf Tour" subtitle="Play. Compete. Win." />
+                <Hero
+                    title="Smash Golf Tour"
+                    subtitle="Play. Compete. Win."
+                    imgSrc="/assets/images/hero-image.png"
+                />
 
                 <div className="flex flex-col items-center justify-center py-16 bg-gray-400 dark:bg-gray-950">
                     <Image
@@ -23,6 +26,12 @@ export default function Home() {
                         className="object-contain "
                     />
                 </div>
+
+                <section>
+                    <div className="container mx-auto">
+                        <AboutSection />
+                    </div>
+                </section>
 
                 <section className="dark:bg-gray-900 py-24">
                     <EventsSlider />

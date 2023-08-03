@@ -1,3 +1,5 @@
+import React, { ReactNode } from 'react'
+
 export type EventProps = {
     id: number
     name: string
@@ -12,4 +14,15 @@ export type EventProps = {
     status?: string
     user_registered?: boolean
     scorecard_uploaded?: boolean
+}
+
+type ButtonProps = {
+    text?: string
+    textColor?: string
+    textHoverColor?: string
+    icon?: ReactNode
+    href?: string
+    onClick?: () => void
+    children?: ReactNode
+    className?: string
 }

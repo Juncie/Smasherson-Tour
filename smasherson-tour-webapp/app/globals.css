@@ -58,5 +58,6 @@ body{
   background: linear-gradient(180deg,rgba(255, 255, 255, 0.376) 0,rgba(255, 255, 255, 0) 100%);
 }
 
-
-
+.auth-bg{
+  background: url("/assets/images/login-bg.jpg") no-repeat center center fixed;
+}

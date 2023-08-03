@@ -12,7 +12,7 @@ const commonConfig = {
 export const smashersAPI = (token?: any) => {
     const smashersInstance = axios.create({
         ...commonConfig,
-        baseURL: process.env.REACT_APP_API_URL,
+        baseURL: process.env.API_URL,
     })
 
     smashersInstance.interceptors.request.use(

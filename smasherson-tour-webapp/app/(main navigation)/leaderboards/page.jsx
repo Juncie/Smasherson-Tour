@@ -28,3 +28,5 @@ export default function Leaderboard() {
         </>
     )
 }
+
+// Leaderboard Data should pertain to certain events

@@ -12,7 +12,7 @@ const EventDetailsPage = ({ params }) => {
         return data
     }
 
-    const URL = `https://be.smasherson.com/api/v1/events/${params.id}`
+    const URL = `https://staging-be.smasherson.com/api/v1/events/${params.id}`
 
     const { data, error } = useSWR(URL, fetcher)
 
@@ -72,7 +72,7 @@ const EventDetailsPage = ({ params }) => {
                             </div>
                         </div>
                         <Link
-                            href="#"
+                            href="/login"
                             className="block bg-blue-700 py-4 px-8 uppercase text-center text-white rounded-sm hover:bg-blue-800 transition-all duration-200"
                         >
                             Sign Up

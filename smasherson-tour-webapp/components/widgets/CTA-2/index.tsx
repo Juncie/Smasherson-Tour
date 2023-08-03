@@ -5,7 +5,7 @@ import { Balancer } from 'react-wrap-balancer'
 
 export default function CTA_2() {
     return (
-        <div className="flex flex-row-reverse gap-8">
+        <div className="flex lg:flex-row-reverse sm:flex-col-reverse sm:items-center sm:justify-centers gap-8">
             <div className="basis-2/3">
                 <h3>
                     <Balancer className="uppercase w-full">
@@ -19,14 +19,14 @@ export default function CTA_2() {
                     </Balancer>
                 </h3>
                 <p>
-                    <Balancer>
+                    <Balancer className="font-sans">
                         Use your own clubs, real balls, outdoor ranges, and
                         Toptracer technology via the Smashers ON App.
                     </Balancer>
                 </p>
                 <br />
                 <p>
-                    <Balancer className="max-w-md">
+                    <Balancer className="lg:max-w-md font-sans">
                         Say goodbye to traditional golf hassles and hello to
                         elevate your game!
                     </Balancer>

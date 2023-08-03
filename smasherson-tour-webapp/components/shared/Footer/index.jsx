@@ -3,7 +3,7 @@ import Logo from '../Logo'
 export default function Footer() {
     return (
         <>
-            <footer className="p-4 bg-blue-700 md:p-8 lg:p-10 dark:bg-blue-900 mt-24">
+            <footer className="bg-blue-700 md:p-8 lg:p-10 dark:bg-blue-900">
                 <div className="mx-auto max-w-screen-xl text-center">
                     <a href="#" className="flex justify-center items-center">
                         <Logo height={150} width={150} />
