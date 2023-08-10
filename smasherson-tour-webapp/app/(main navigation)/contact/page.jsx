@@ -1,16 +1,10 @@
 import React from 'react'
+import PageHeader from '@/components/shared/PageHeader'
 
 export default function ContactPage() {
     return (
         <>
-            <section className="text-gray-600 body-font relative flex flex-col gap-8">
-                <div className="containter mx-auto flex justify-center items-center mt-8">
-                    <h1 className="uppercase">
-                        <span className="text-4xl font-bold dark:text-white tracking-wider">
-                            Get In Touch
-                        </span>
-                    </h1>
-                </div>
+            <section className="text-gray-600 body-font relative flex flex-col gap-8 pb-8">
                 <div className="container px-5 mx-auto flex sm:flex-nowrap flex-wrap">
                     <div className="lg:w-2/3 md:w-1/2 bg-gray-300 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
                         <iframe

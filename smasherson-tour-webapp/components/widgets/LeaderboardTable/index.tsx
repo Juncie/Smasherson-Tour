@@ -1,7 +1,7 @@
 import SectionHeader from '@/components/shared/SectionHeader'
 import React, { useState, useEffect } from 'react'
 
-interface LeaderboardItem {
+type LeaderboardItem = {
     rank: number
     name: string
     score: number
@@ -15,7 +15,7 @@ interface LeaderboardTableProps {
 
 const LeaderboardTable: React.FC<LeaderboardTableProps> = ({
     data = [],
-    title = 'Leaderboard',
+    title = 'Global Leaderboard',
 }) => {
     const [leaderboardData, setLeaderboardData] = useState<LeaderboardItem[]>(
         []
@@ -29,8 +29,9 @@ const LeaderboardTable: React.FC<LeaderboardTableProps> = ({
         <div className="container mx-auto pt-36">
             <SectionHeader
                 title={title}
-                titleSize="7xl"
+                titleSize="4xl"
                 titleClass="tracking-wider uppercase"
+                className="text-center"
             />
             <table className="table-auto container mx-auto">
                 <thead className="bg-blue-500 text-3xl uppercase tracking-widest">

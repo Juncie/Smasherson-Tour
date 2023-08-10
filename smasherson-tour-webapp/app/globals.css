@@ -2,14 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
-  body {
-    @apply dark:bg-gray-950 bg-white transition duration-200;
-  }
-}
+
+
 
 body{
   overflow-x: hidden;
+  background: #333;
+  color: white;
 }
 
 .no-scrollbar::-webkit-scrollbar {
@@ -60,4 +59,8 @@ body{
 
 .auth-bg{
   background: url("/assets/images/login-bg.jpg") no-repeat center center fixed;
+}
+
+.header-bg{
+  background: url("/assets/images/page-header.png") no-repeat center center;
 }

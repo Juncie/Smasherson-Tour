@@ -7,6 +7,7 @@ import { Balancer } from 'react-wrap-balancer'
 export default function SignUp() {
     const emailRef = useRef<HTMLInputElement>(null)
     const passwordRef = useRef<HTMLInputElement>(null)
+    const confirmPasswordRef = useRef<HTMLInputElement>(null)
     const [errorMessage, setErrorMessage] = useState<string>('')
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -58,14 +59,14 @@ export default function SignUp() {
 
     return (
         <>
-            <div className="py-6 sm:py-8 lg:py-12">
+            <div className="py-6 sm:py-8 lg:py-12 ">
                 <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
-                    <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-8 lg:text-3xl uppercase">
+                    <h2 className="mb-4 text-center text-2xl font-bold text-white tracking-wider md:mb-8 lg:text-3xl uppercase">
                         Register
                     </h2>
 
                     <form
-                        className="mx-auto max-w-lg rounded-lg border"
+                        className="mx-auto max-w-lg rounded-lg border bg-white"
                         onSubmit={handleSubmit}
                     >
                         <div className="flex flex-col gap-4 p-4 md:p-8">
@@ -96,15 +97,28 @@ export default function SignUp() {
                                     className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
                                 />
                             </div>
+                            <div>
+                                <label
+                                    htmlFor="confirm-password"
+                                    className="mb-2 inline-block text-sm text-gray-800 sm:text-base"
+                                >
+                                    Confirm Password
+                                </label>
+                                <input
+                                    name="confirm-password"
+                                    ref={confirmPasswordRef}
+                                    className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
+                                />
+                            </div>
 
-                            <button className="block rounded-lg bg-gray-800 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-gray-300 transition duration-100 hover:bg-gray-700 focus-visible:ring active:bg-gray-600 md:text-base">
-                                Log in
+                            <button className="block rounded-lg bg-gray-800 px-8 py-3 text-center text-sm font-semibold text-white outline-none tracking-wider uppercase ring-gray-300 transition duration-100 hover:bg-gray-700 focus-visible:ring active:bg-gray-600 md:text-base">
+                                Sign Up
                             </button>
 
                             <div className="relative flex items-center justify-center">
                                 <span className="absolute inset-x-0 h-px bg-gray-300"></span>
                                 <span className="relative bg-white px-4 text-sm text-gray-400">
-                                    Log in with social
+                                    Sign Up with social
                                 </span>
                             </div>
 
@@ -163,10 +177,10 @@ export default function SignUp() {
                             <p className="text-center text-sm text-gray-500">
                                 Already have an account?{' '}
                                 <a
-                                    href="#"
+                                    href="/login"
                                     className="text-indigo-500 transition duration-100 hover:text-indigo-600 active:text-indigo-700"
                                 >
-                                    Log In
+                                    Log in
                                 </a>
                             </p>
                         </div>

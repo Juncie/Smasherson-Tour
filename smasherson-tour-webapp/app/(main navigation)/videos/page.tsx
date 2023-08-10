@@ -61,15 +61,6 @@ export default function VideosPage() {
         <>
             <section id="video-header">
                 <div className="container mx-auto">
-                    <div className="text-center mt-8">
-                        <h1 className="text-5xl uppercase font-bold tracking-wider">
-                            Videos
-                        </h1>
-                        <TextBlock
-                            text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae vel eveniet voluptate! Temporibus, beatae aliquid."
-                            className="uppercase mt-4"
-                        />
-                    </div>
                     <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
                         {videos.map((video) => (
                             <div key={video.id}>

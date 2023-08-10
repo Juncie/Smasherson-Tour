@@ -1,5 +1,11 @@
+import PageHeader from '@/components/shared/PageHeader'
 import React from 'react'
 
 export default function layout({ children }) {
-    return <div>{children}</div>
+    return (
+        <div>
+            <PageHeader title="Videos" />
+            {children}
+        </div>
+    )
 }

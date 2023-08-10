@@ -34,7 +34,8 @@
         "**/*.tsx",
         "lib/fetcher.jsx",
         "lib/getEvents.tsx",
-        "app/api/events/route.jsx"
+        "app/api/events/route.jsx",
+        "app/(user)/dashboard/[userId]"
     ],
     "exclude": ["node_modules"]
 }

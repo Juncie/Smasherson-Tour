@@ -11,11 +11,11 @@ export default function NavBar({ navLinks }) {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
     const linkStyle =
-        'block text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 lg:text-2xl dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700'
+        'block border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 lg:text-2xl text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700'
 
     return (
         <>
-            <header className="sticky top-0 z-30 flex items-center justify-between py-2 px-24 dark:bg-opacity-95 bg-white dark:bg-gray-800 lg:rounded-b-md">
+            <header className="sticky top-0 z-30 flex items-center justify-between py-2 px-24 dark:bg-opacity-95 bg-gray-800 lg:rounded-b-md">
                 <Logo width={140} height={140} />
                 <nav className="border-gray-200 flex justify-between px-4 tracking-wider uppercase lg:px-6 lg:order-2 sm:order-3">
                     <div className="flex flex-wrap mx-auto max-w-screen-xl">
@@ -77,7 +77,7 @@ export default function NavBar({ navLinks }) {
                         </div>
                     </div>
                 </nav>
-                {!user ? (
+                {!user.isLoggedIn ? (
                     <div className="lg:order-3 flex gap-4 uppercase tracking-wide">
                         <Link
                             className="outline outline-2 outline-teal-400 hover:bg-opacity-50 hover:bg-teal-300 px-8 py-4 transition-all duration-150 ease-in-out"

@@ -1,3 +1,4 @@
+import Button from '@/components/shared/Button'
 import React from 'react'
 import { Balancer } from 'react-wrap-balancer'
 
@@ -5,21 +6,19 @@ export default function AboutSection() {
     return (
         <div className="py-16">
             <div className="xl:container m-auto px-6 text-gray-600 md:px-12 xl:px-16">
-                <div className="lg:bg-gray-800 dark:lg:bg-darker lg:p-16 rounded-sm space-y-6 md:flex flex-row-reverse md:gap-6 justify-center md:space-y-0 lg:items-center">
+                <div className="bg-gray-900 lg:p-16 rounded-sm space-y-6 md:flex flex-row-reverse md:gap-6 justify-center md:space-y-0 lg:items-center">
                     <div className="md:5/12 lg:w-1/2">
                         <img
-                            src="images/pie.svg"
+                            src="/assets/images/about-image.png"
                             alt="image"
                             loading="lazy"
-                            width=""
-                            height=""
                         />
                     </div>
                     <div className="md:7/12 lg:w-1/2 space-y-2">
                         <span className="uppercase">
                             Welcome to the Smash Golf Tour
                         </span>
-                        <h2 className="text-3xl font-bold text-gray-900 md:text-4xl dark:text-white uppercase tracking-wider">
+                        <h2 className="text-3xl font-bold  md:text-4xl text-white uppercase tracking-wider">
                             <Balancer>
                                 Home of Golf's Non-Traditional Champions
                             </Balancer>
@@ -51,21 +50,21 @@ export default function AboutSection() {
 
                                 <div className="w-5/6">
                                     <h4 className="font-semibold text-lg text-gray-700 dark:text-orange-400">
-                                        Face Competition Around the World
+                                        Compete Anywhere
                                     </h4>
                                     <p className="text-gray-500 dark:text-gray-400">
-                                        Compete against friends and foes at any
-                                        TopTracer range in the world.
+                                        Tee off against friends at any TopTracer
+                                        range in the world.
                                     </p>
                                 </div>
                             </div>
                             <div className="pt-4 flex gap-4 md:items-center">
-                                <div className="w-12 h-12 flex gap-4 rounded-full bg-orange-100 dark:bg-orange-900/20">
+                                <div className="w-12 h-12 flex gap-4 rounded-full bg-blue-100 dark:bg-blue-900/20">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         viewBox="0 0 24 24"
                                         fill="currentColor"
-                                        className="w-6 h-6 m-auto text-orange-500 dark:text-orange-400"
+                                        className="w-6 h-6 m-auto text-blue-500 dark:text-blue-400"
                                     >
                                         <path
                                             fill-rule="evenodd"
@@ -76,7 +75,7 @@ export default function AboutSection() {
                                 </div>
 
                                 <div className="w-5/6">
-                                    <h4 className="font-semibold text-lg text-gray-700 dark:text-teal-300">
+                                    <h4 className="font-semibold text-lg text-gray-700 dark:text-blue-300">
                                         Real Time Location
                                     </h4>
                                     <p className="text-gray-500 dark:text-gray-400">
@@ -101,14 +100,20 @@ export default function AboutSection() {
                                     </svg>
                                 </div>
                                 <div className="w-5/6">
-                                    <h4 className="font-semibold text-lg text-gray-700 dark:text-teal-300">
-                                        Real Time Location
-                                    </h4>
+                                    <h4 className="font-semibold text-lg text-gray-700 dark:text-teal-300"></h4>
                                     <p className="text-gray-500 dark:text-gray-400">
                                         Asperiores nemo possimus nesciunt quam
                                         mollitia.
                                     </p>
                                 </div>
+                            </div>
+                            <div className="container mx-auto">
+                                <Button
+                                    href="/about"
+                                    className="bg-blue-500 text-white py-4 inline-block px-8 mt-8"
+                                >
+                                    Learn More
+                                </Button>
                             </div>
                         </div>
                     </div>

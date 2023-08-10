@@ -5,9 +5,11 @@ import { Balancer } from 'react-wrap-balancer'
 import { FcGoogle } from 'react-icons/fc'
 
 import Logo from '@/components/shared/Logo'
-import { signInUser } from '@/lib/signInUser'
 
+import { signInUser } from '@lib/signInUser'
 import { useUserContext } from '@/context/UserContext'
+
+import { toast } from 'react-toastify'
 
 export default function Login() {
     const { user, setUser } = useUserContext()
@@ -26,31 +28,39 @@ export default function Login() {
             submitButton.disabled = true
         }
 
-        const email = emailRef.current?.value
-        const password = passwordRef.current?.value
+        const email = emailRef.current?.value as string
+        const password = passwordRef.current?.value as string
 
         try {
-            // const userData = {
-            //     email: email,
-            //     password: password,
-            // }
-            // const res = await signInUser({ email, password })
+            const res = await signInUser(email, password)
 
-            // if (!res.success && res.message) {
-            //     setErrorMessage(res.message)
-            // } else if (res.success && res.token) {
-            //     setErrorMessage('')
-            //     localStorage.setItem('token', res.token)
-            //     window.location.href = '/dashboard'
-            // } else {
-            //     setErrorMessage('')
-            // }
-            setUser({
-                id: 1,
-                email,
-                password,
-            })
-            window.location.href = '/dashboard'
+            if (!res.data.data.success) {
+                setErrorMessage(res.data.data.message)
+            } else if (res.data.data.success) {
+                setUser({
+                    userData: res.data.data,
+                    isLogginIn: true,
+                    status: 'success',
+                })
+                localStorage.setItem(
+                    'accessToken',
+                    res.data.data.data.access_token
+                )
+                // notify the user he is logged in
+                toast.success('You are now logged in', {
+                    position: 'bottom-right',
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                })
+
+                window.location.href = `/dashboard/${res.data.data.data.id}`
+            } else {
+                setErrorMessage('')
+            }
         } catch (error) {
             setTimeout(() => {
                 setErrorMessage('Something went wrong. Please try again.')
@@ -88,7 +98,7 @@ export default function Login() {
                         </p>
                     </div>
 
-                    <div className="container mx-auto">
+                    <div className="container mx-auto pb-4">
                         {errorMessage && (
                             <p className="text-center text-lg text-red-500">
                                 {errorMessage}
@@ -122,7 +132,7 @@ export default function Login() {
                                 <div className="ml-auto">
                                     <a
                                         href="/forgot-password"
-                                        className="text-blue-500 hover:text-blue-600 font-sans font-semibold text-sm capitalize"
+                                        className="text-blue-500 hover:text-blue-600 text-sm uppercase tracking-wider font-normal"
                                     >
                                         Forgot Password?
                                     </a>
@@ -140,7 +150,7 @@ export default function Login() {
 
                     <button
                         type="submit"
-                        className="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 font-mono uppercase tracking-wider font-bold transition duration-150 ease-in-out"
+                        className="w-full bg-blue-500 text-gray-50 py-2 px-4 rounded-md hover:bg-blue-600 uppercase tracking-widest transition duration-150 ease-in-out"
                     >
                         Log in
                     </button>
