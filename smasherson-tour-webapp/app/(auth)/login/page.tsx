@@ -10,6 +10,7 @@ import { signInUser } from '@lib/signInUser'
 import { useUserContext } from '@/context/UserContext'
 
 import { toast } from 'react-toastify'
+import { Alert } from 'flowbite-react'
 
 export default function Login() {
     const { user, setUser } = useUserContext()
@@ -47,14 +48,17 @@ export default function Login() {
                     res.data.data.data.access_token
                 )
                 // notify the user he is logged in
-                toast.success('You are now logged in', {
-                    position: 'bottom-right',
-                    autoClose: 2000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
+                // toast.success('You are now logged in', {
+                //     position: 'bottom-right',
+                //     autoClose: 2000,
+                //     hideProgressBar: false,
+                //     closeOnClick: true,
+                //     pauseOnHover: true,
+                //     draggable: true,
+                //     progress: undefined,
+                // })
+                Alert({
+                    title: 'You are now logged in',
                 })
 
                 window.location.href = `/dashboard/${res.data.data.data.id}`
