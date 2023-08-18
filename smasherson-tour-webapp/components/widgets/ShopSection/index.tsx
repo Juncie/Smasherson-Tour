@@ -35,11 +35,17 @@ export default function ShopSection() {
                     height={100}
                     alt="Travis Matthews"
                 />
+                <Image
+                    src="/assets/logos/adidas.png"
+                    width={100}
+                    height={100}
+                    alt="Travis Matthews"
+                />
             </div>
             <div className="w-full flex flex-row items-center justify-center">
                 <Link
                     href="#"
-                    className="py-4 px-8 inline-block uppercase my-16 outline outline-gray-800"
+                    className="py-4 px-8 inline-block uppercase my-16 outline outline-gray-800 hover:bg-white/10 transition-all duration-150 ease-in-out"
                 >
                     Shop Now
                 </Link>

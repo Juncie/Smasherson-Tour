@@ -7,6 +7,7 @@ import Hero from '@/components/widgets/Hero'
 import EventsSlider from '@/components/widgets/EventsSlider'
 import AboutSection from '@/components/widgets/AboutSection/page'
 import ShopSection from '@/components/widgets/ShopSection'
+
 export default function Home() {
     return (
         <>
@@ -33,6 +34,10 @@ export default function Home() {
                     </div>
                 </section>
 
+                <section className="flex flex-col items-center justify-center">
+                    <ShopSection />
+                </section>
+
                 <section className="py-24">
                     <EventsSlider />
                 </section>
@@ -47,10 +52,6 @@ export default function Home() {
                     <div className="container mx-auto">
                         <CTA_2 />
                     </div>
-                </section>
-
-                <section className="flex flex-col items-center justify-center">
-                    <ShopSection />
                 </section>
             </main>
         </>

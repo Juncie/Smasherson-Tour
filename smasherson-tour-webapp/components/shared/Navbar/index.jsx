@@ -1,6 +1,5 @@
 'use client'
 import { useState } from 'react'
-import ThemeButton from '../ThemeButton'
 import Link from 'next/link'
 import Logo from '../Logo'
 import { useUserContext } from '@/context/UserContext'
@@ -12,6 +11,12 @@ export default function NavBar({ navLinks }) {
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
     const linkStyle =
         'block border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0 lg:text-2xl text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700'
+
+    const firstName = user?.userData?.first_name
+    const lastName = user?.userData?.last_name
+
+    const fistInitial = firstName?.charAt(0) || ''
+    const lastInitial = lastName?.charAt(0) || ''
 
     return (
         <>
@@ -94,7 +99,11 @@ export default function NavBar({ navLinks }) {
                     </div>
                 ) : (
                     <div className="lg:order-last">
-                        <Avatar rounded size="md" placeholderInitials="BM" />
+                        <Avatar
+                            rounded
+                            size="lg"
+                            placeholderInitials={`${fistInitial}${lastInitial}`}
+                        />
                     </div>
                 )}
             </header>

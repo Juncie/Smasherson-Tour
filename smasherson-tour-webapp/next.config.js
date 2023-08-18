@@ -6,8 +6,9 @@ const nextConfig = {
       "source.unsplash.com",
       "sa-prod-01.s3.amazonaws.com",
       "sa-front-end.s3.amazonaws.com",
-      "https://img.youtube.com",
+      "img.youtube.com",
       "sa-stag-01.s3.amazonaws.com",
+      "dummyimage.com"
       
     ],
   },

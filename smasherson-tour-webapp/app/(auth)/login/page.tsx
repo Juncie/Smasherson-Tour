@@ -10,7 +10,6 @@ import { signInUser } from '@lib/signInUser'
 import { useUserContext } from '@/context/UserContext'
 
 import { toast } from 'react-toastify'
-import { Alert } from 'flowbite-react'
 
 export default function Login() {
     const { user, setUser } = useUserContext()
@@ -34,12 +33,13 @@ export default function Login() {
 
         try {
             const res = await signInUser(email, password)
+            console.log('LOGIN RESPONSE', res)
 
             if (!res.data.data.success) {
                 setErrorMessage(res.data.data.message)
             } else if (res.data.data.success) {
                 setUser({
-                    userData: res.data.data,
+                    userData: res.data.data.data,
                     isLogginIn: true,
                     status: 'success',
                 })
@@ -48,18 +48,7 @@ export default function Login() {
                     res.data.data.data.access_token
                 )
                 // notify the user he is logged in
-                // toast.success('You are now logged in', {
-                //     position: 'bottom-right',
-                //     autoClose: 2000,
-                //     hideProgressBar: false,
-                //     closeOnClick: true,
-                //     pauseOnHover: true,
-                //     draggable: true,
-                //     progress: undefined,
-                // })
-                Alert({
-                    title: 'You are now logged in',
-                })
+                alert('You are now logged in!' + user?.userData?.first_name)
 
                 window.location.href = `/dashboard/${res.data.data.data.id}`
             } else {

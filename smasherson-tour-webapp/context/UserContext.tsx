@@ -1,12 +1,11 @@
 'use client'
-
 import { createContext, useContext, useState } from 'react'
 
 const UserContext = createContext({})
 
 export const UserContextProvider = ({ children }) => {
     const [user, setUser] = useState({
-        userData: {},
+        userData: null,
         isLoggedIn: false,
         status: 'idle',
     })

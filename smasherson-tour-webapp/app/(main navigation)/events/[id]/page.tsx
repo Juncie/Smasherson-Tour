@@ -4,8 +4,11 @@ import Link from 'next/link'
 import React from 'react'
 import { Balancer } from 'react-wrap-balancer'
 import useSWR from 'swr'
+import { useRouter } from 'next/router'
 
 const EventDetailsPage = ({ params }) => {
+    const router = useRouter()
+
     const fetcher = async (url: string) => {
         const res = await fetch(url)
         const data = await res.json()
@@ -35,13 +38,13 @@ const EventDetailsPage = ({ params }) => {
         )
 
     return (
-        <section className="container mx-auto w-full ">
+        <section className="container mx-auto w-full pb-16 ">
             <h1 className="text-5xl uppercase mt-8 tracking-wider text-center">
                 {data.data.name && data.data.name}
             </h1>
             <div className="flex mt-8 justify-evenly">
                 <div className="flex flex-col space-y-4">
-                    <div className="">
+                    <div className="basis-1/2">
                         <Image
                             src={
                                 data.data.event_poster && data.data.event_poster
@@ -78,6 +81,13 @@ const EventDetailsPage = ({ params }) => {
                             Sign Up
                         </Link>
                     </div>
+                </div>
+            </div>
+            <div className="pb-16">
+                <div className="container mx-auto">
+                    <button onClick={() => router.back()}>
+                        Back to Events
+                    </button>
                 </div>
             </div>
         </section>
