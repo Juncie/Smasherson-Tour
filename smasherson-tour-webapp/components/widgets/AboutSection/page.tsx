@@ -100,7 +100,12 @@ export default function AboutSection() {
                                     </svg>
                                 </div>
                                 <div className="w-5/6">
-                                    <h4 className="font-semibold text-lg text-gray-700 dark:text-teal-300"></h4>
+                                    <h4 className="font-semibold text-lg text-gray-700 dark:text-teal-300">
+                                        <Balancer>
+                                            Earn Smash Cash and Redeem Prizes in
+                                            the Smash Shop!
+                                        </Balancer>
+                                    </h4>
                                     <p className="text-gray-500 dark:text-gray-400">
                                         Asperiores nemo possimus nesciunt quam
                                         mollitia.

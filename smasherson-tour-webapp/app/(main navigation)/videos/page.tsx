@@ -1,5 +1,4 @@
 'use client'
-import TextBlock from '@/components/shared/TextBlock'
 import React from 'react'
 
 import YouTube, { YouTubeProps } from 'react-youtube'
@@ -44,10 +43,17 @@ const videos = [
 ]
 
 const opts = {
-    height: '390',
-    width: `${600 / 1.2}`,
+    width: `${16 * 48}`,
+    height: `${9 * 48}`,
     playerVars: {
-        // https://developers.google.com/youtube/player_parameters
+        autoplay: 1,
+    },
+}
+
+let sidebarOpts = {
+    width: `${16 * 24}`,
+    height: `${9 * 24}`,
+    playerVars: {
         autoplay: 1,
     },
 }
@@ -59,20 +65,33 @@ const onPlayerReady: YouTubeProps['onReady'] = (event) => {
 export default function VideosPage() {
     return (
         <>
-            <section id="video-header">
+            <section className="py-16 flex items-center justify-center">
                 <div className="container mx-auto">
-                    <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-                        {videos.map((video) => (
-                            <div key={video.id}>
-                                <YouTube
-                                    videoId={video.src}
-                                    opts={opts}
-                                    onReady={onPlayerReady}
-                                    loading="lazy"
-                                />
-                            </div>
-                        ))}
-                    </section>
+                    <div className="flex flex-wrap">
+                        <main className="md:w-2/3 space-y-6">
+                            {videos.map((video) => (
+                                <div key={video.id}>
+                                    <YouTube
+                                        videoId={video.src}
+                                        opts={opts}
+                                        onReady={onPlayerReady}
+                                    />
+                                </div>
+                            ))}
+                        </main>
+                        <aside className="md:w-1/3 space-y-6">
+                            {videos.map((video) => (
+                                <div key={video.id}>
+                                    <YouTube
+                                        videoId={video.src}
+                                        opts={sidebarOpts}
+                                        onReady={onPlayerReady}
+                                        loading="lazy"
+                                    />
+                                </div>
+                            ))}
+                        </aside>
+                    </div>
                 </div>
             </section>
         </>

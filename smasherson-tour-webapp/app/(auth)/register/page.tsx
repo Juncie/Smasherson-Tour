@@ -1,9 +1,6 @@
 'use client'
 import { useRef, useState } from 'react'
 
-import Logo from '@/components/shared/Logo'
-import { Balancer } from 'react-wrap-balancer'
-
 export default function SignUp() {
     const emailRef = useRef<HTMLInputElement>(null)
     const passwordRef = useRef<HTMLInputElement>(null)
@@ -137,7 +134,7 @@ export default function SignUp() {
                                     />
                                 </svg>
                                 <span className="tracking-wide font-sans">
-                                    Continue with Facebook
+                                    Continue with Apple
                                 </span>
                             </button>
 

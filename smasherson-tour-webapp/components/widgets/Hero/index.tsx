@@ -37,14 +37,14 @@ export default function Hero(props: HeroProps) {
                         <div id="wrapper">
                             <h1>
                                 <section className="flex flex-col justify-center items-center space-y-4">
-                                    <div className="flex items-center justify-center uppercase tracking-wider text-8xl text-white">
-                                        <strong>
+                                    <div className="flex items-center justify-center uppercase tracking-wider lg:text-8xl md:text-6xl sm:text-4xl text-white">
+                                        <strong className="">
                                             <Balancer>{props.title}</Balancer>
                                         </strong>
                                     </div>
 
                                     <div className="flex items-center justify-center">
-                                        <span className="uppercase bg-blue text-7xl text-gray-900 bg-blue-500 px-[8rem] py-6 rounded-tl-3xl rounded-br-3xl">
+                                        <span className="uppercase bg-blue lg:text-7xl md:text-5xl xs:text-5xl text-gray-900 bg-blue-500 px-[8rem] py-6 rounded-tl-3xl rounded-br-3xl">
                                             <Balancer>
                                                 {props.subtitle}
                                             </Balancer>

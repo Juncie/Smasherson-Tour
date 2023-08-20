@@ -20,8 +20,13 @@ export default function NavBar({ navLinks }) {
 
     return (
         <>
-            <header className="sticky top-0 z-30 flex items-center justify-between py-2 px-24 dark:bg-opacity-95 bg-gray-800 lg:rounded-b-md">
-                <Logo width={140} height={140} />
+            <header
+                id="site-header"
+                className="sticky top-0 z-30 flex items-center justify-between py-2 px-24 dark:bg-opacity-95 bg-gray-800 lg:rounded-b-md "
+            >
+                <div className="hidden lg:inline-block">
+                    <Logo width={140} height={140} className="sm:hidden" />
+                </div>
                 <nav className="border-gray-200 flex justify-between px-4 tracking-wider uppercase lg:px-6 lg:order-2 sm:order-3">
                     <div className="flex flex-wrap mx-auto max-w-screen-xl">
                         <div className="flex items-center lg:order-2">
