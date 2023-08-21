@@ -4,7 +4,7 @@ import Link from 'next/link'
 import React from 'react'
 import { Balancer } from 'react-wrap-balancer'
 import useSWR from 'swr'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 
 const EventDetailsPage = ({ params }) => {
     const router = useRouter()
@@ -38,59 +38,66 @@ const EventDetailsPage = ({ params }) => {
         )
 
     return (
-        <section className="container mx-auto w-full pb-16 ">
-            <h1 className="text-5xl uppercase mt-8 tracking-wider text-center">
-                {data.data.name && data.data.name}
-            </h1>
-            <div className="flex mt-8 justify-evenly">
-                <div className="flex flex-col space-y-4">
-                    <div className="basis-1/2">
-                        <Image
-                            src={
-                                data.data.event_poster && data.data.event_poster
-                            }
-                            width={650}
-                            height={600}
-                            alt={data.data.name && data.data.name}
-                        ></Image>
-                    </div>
-                </div>
-                <div className="bg-gray-800 bg-opacity-70 p-8 rounded-sm">
-                    <div className="container mx-auto w-full flex justify-between flex-col h-full">
-                        <div className="flex flex-col space-y-4">
-                            <div className="space-y-4">
-                                <h1 className="text-2xl uppercase mt-8 tracking-wider">
-                                    {data.data.name && data.data.name}
-                                </h1>
-                                <p className="text-xl">{formattedDate}</p>
-                                <p className="pt-8 max-w-full">
-                                    <Balancer>
-                                        Lorem ipsum, dolor sit amet consectetur
-                                        adipisicing elit. Culpa minus, earum
-                                        nulla adipisci esse velit doloribus ea
-                                        ipsum, perspiciatis vel rerum corrupti
-                                        temporibus ex!
-                                    </Balancer>
-                                </p>
-                            </div>
+        <>
+            <section className="container mx-auto w-full pb-16 flex flex-col justify-center items-center">
+                <h1 className="text-5xl uppercase mt-8 tracking-wider text-center">
+                    {data.data.name && data.data.name}
+                </h1>
+                <div className="flex mt-8 justify-evenly">
+                    <div className="flex flex-col space-y-4">
+                        <div className="basis-1/2">
+                            <Image
+                                src={
+                                    data.data.event_poster &&
+                                    data.data.event_poster
+                                }
+                                width={650}
+                                height={600}
+                                alt={data.data.name && data.data.name}
+                            ></Image>
                         </div>
-                        <Link
-                            href="/login"
-                            className="block bg-blue-700 py-4 px-8 uppercase text-center text-white rounded-sm hover:bg-blue-800 transition-all duration-200"
-                        >
-                            Sign Up
-                        </Link>
+                    </div>
+                    <div className="bg-gray-800 bg-opacity-70 p-8 rounded-sm">
+                        <div className="container mx-auto w-full flex justify-between flex-col h-full">
+                            <div className="flex flex-col space-y-4">
+                                <div className="space-y-4">
+                                    <h1 className="text-2xl uppercase mt-8 tracking-wider">
+                                        {data.data.name && data.data.name}
+                                    </h1>
+                                    <p className="text-xl">{formattedDate}</p>
+                                    <p className="pt-8 max-w-full">
+                                        <Balancer>
+                                            Lorem ipsum, dolor sit amet
+                                            consectetur adipisicing elit. Culpa
+                                            minus, earum nulla adipisci esse
+                                            velit doloribus ea ipsum,
+                                            perspiciatis vel rerum corrupti
+                                            temporibus ex!
+                                        </Balancer>
+                                    </p>
+                                </div>
+                            </div>
+                            <Link
+                                href="/login"
+                                className="block bg-blue-700 py-4 px-8 uppercase text-center text-white rounded-sm hover:bg-blue-800 transition-all duration-200"
+                            >
+                                Sign Up
+                            </Link>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div className="pb-16">
-                <div className="container mx-auto">
-                    <button onClick={() => router.back()}>
-                        Back to Events
-                    </button>
+                <div className="py-16">
+                    <div className="container mx-auto">
+                        <button
+                            onClick={() => router.back()}
+                            className="bg-primary py-4 px-8 uppercase text-center text-white rounded-sm hover:bg-blue-800 transition-all duration-200"
+                        >
+                            Back to Events
+                        </button>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </>
     )
 }
 

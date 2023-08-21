@@ -3,15 +3,15 @@ import Logo from '../Logo'
 export default function Footer() {
     return (
         <>
-            <footer className="bg-blue-700 md:p-8 lg:p-10 dark:bg-blue-900">
+            <footer className="bg-primary/10 md:p-8 lg:p-10">
                 <div className="mx-auto max-w-screen-xl text-center">
                     <a href="#" className="flex justify-center items-center">
                         <Logo height={150} width={150} />
                     </a>
-                    <p className="my-6 text-white dark:text-gray-400">
+                    <p className="my-6  ">
                         Home of Golf&rsquo;s Non-Traditional Champions
                     </p>
-                    <ul className="flex flex-wrap justify-center items-center mb-6 text-gray-900 dark:text-white">
+                    <ul className="flex flex-wrap justify-center items-center mb-6 ">
                         <li>
                             <a
                                 href="/about"

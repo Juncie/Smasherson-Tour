@@ -6,7 +6,7 @@ import { useUserContext } from '@/context/UserContext'
 import { Avatar } from 'flowbite-react'
 
 export default function NavBar({ navLinks }) {
-    const { user } = useUserContext()
+    const { user, setUser } = useUserContext()
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
     const linkStyle =
@@ -24,8 +24,8 @@ export default function NavBar({ navLinks }) {
                 id="site-header"
                 className="sticky top-0 z-30 flex items-center justify-between py-2 px-24 dark:bg-opacity-95 bg-gray-800 lg:rounded-b-md "
             >
-                <div className="hidden lg:inline-block">
-                    <Logo width={140} height={140} className="sm:hidden" />
+                <div className="hidden md:inline-block">
+                    <Logo width={140} height={140} />
                 </div>
                 <nav className="border-gray-200 flex justify-between px-4 tracking-wider uppercase lg:px-6 lg:order-2 sm:order-3">
                     <div className="flex flex-wrap mx-auto max-w-screen-xl">
@@ -87,16 +87,16 @@ export default function NavBar({ navLinks }) {
                         </div>
                     </div>
                 </nav>
-                {!user.isLoggedIn ? (
+                {!user ? (
                     <div className="lg:order-3 flex gap-4 uppercase tracking-wide">
                         <Link
-                            className="outline outline-2 outline-teal-400 hover:bg-opacity-50 hover:bg-teal-300 px-8 py-4 transition-all duration-150 ease-in-out"
+                            className="outline outline-2 outline-teal-400 hover:bg-opacity-50 hover:bg-teal-300 px-4 py-2 transition-all duration-150 ease-in-out whitespace-nowrap"
                             href="/login"
                         >
                             Login
                         </Link>
                         <Link
-                            className="outline outline-2 outline-blue-400 px-8 py-4 hover:bg-opacity-50 hover:bg-blue-300 transition-all duration-150 ease-in-out"
+                            className="outline outline-2 outline-blue-400 px-4 py-2 hover:bg-opacity-50 hover:bg-blue-300 transition-all duration-150 ease-in-out whitespace-nowrap"
                             href="/register"
                         >
                             Sign Up

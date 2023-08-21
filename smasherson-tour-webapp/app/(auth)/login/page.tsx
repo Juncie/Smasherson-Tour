@@ -2,18 +2,23 @@
 import { useRef, useState } from 'react'
 
 import { Balancer } from 'react-wrap-balancer'
-import { FcGoogle } from 'react-icons/fc'
 
 import Logo from '@/components/shared/Logo'
 
 import { signInUser } from '@lib/signInUser'
 import { useUserContext } from '@/context/UserContext'
+import { useRouter } from 'next/navigation'
+import { Alert } from '@mui/material'
 
 export default function Login() {
     const { user, setUser } = useUserContext()
+
     const emailRef = useRef<HTMLInputElement>(null)
     const passwordRef = useRef<HTMLInputElement>(null)
+
     const [errorMessage, setErrorMessage] = useState<string>('')
+
+    const router = useRouter()
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
@@ -31,26 +36,18 @@ export default function Login() {
 
         try {
             const res = await signInUser(email, password)
-            console.log('LOGIN RESPONSE', res)
+            console.log(res)
 
-            if (!res.data.data.success) {
-                setErrorMessage(res.data.data.message)
-            } else if (res.data.data.success) {
-                setUser({
-                    userData: res.data.data.data,
-                    isLogginIn: true,
-                    status: 'success',
-                })
-                localStorage.setItem(
-                    'accessToken',
-                    res.data.data.data.access_token
-                )
-                // notify the user he is logged in
-                alert('You are now logged in!' + user?.userData?.first_name)
+            if (res.data.success) {
+                setUser(res.data.data)
+                localStorage.setItem('accessToken', res.data.data.access_token)
 
-                window.location.href = `/dashboard/${res.data.data.data.id}`
+                console.log('User signed in successfully!', res.data.data.data)
+
+                // Use Next.js router instead of window.location.href
+                router.push(`/dashboard/${res.data.data.id}`)
             } else {
-                setErrorMessage('')
+                setErrorMessage(res.data.message || 'Login failed')
             }
         } catch (error) {
             setTimeout(() => {

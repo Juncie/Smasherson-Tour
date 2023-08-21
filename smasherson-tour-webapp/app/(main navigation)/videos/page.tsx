@@ -3,6 +3,9 @@ import React from 'react'
 
 import YouTube, { YouTubeProps } from 'react-youtube'
 
+import FeaturedVideos from '@/components/widgets/FeaturedVideos'
+import { Balancer } from 'react-wrap-balancer'
+
 const videos = [
     {
         id: 1,
@@ -46,7 +49,7 @@ const opts = {
     width: `${16 * 48}`,
     height: `${9 * 48}`,
     playerVars: {
-        autoplay: 1,
+        autoplay: 0,
     },
 }
 
@@ -54,7 +57,7 @@ let sidebarOpts = {
     width: `${16 * 24}`,
     height: `${9 * 24}`,
     playerVars: {
-        autoplay: 1,
+        autoplay: 0,
     },
 }
 
@@ -67,15 +70,18 @@ export default function VideosPage() {
         <>
             <section className="py-16 flex items-center justify-center">
                 <div className="container mx-auto">
-                    <div className="flex flex-wrap">
+                    <section>{/* <FeaturedVideos /> */}</section>
+                    <div className="flex gap-8">
                         <main className="md:w-2/3 space-y-6">
                             {videos.map((video) => (
-                                <div key={video.id}>
-                                    <YouTube
-                                        videoId={video.src}
-                                        opts={opts}
-                                        onReady={onPlayerReady}
-                                    />
+                                <div
+                                    key={video.id}
+                                    className="bg-gray-800 rounded-md flex flex-col items-center justify-center pb-4"
+                                >
+                                    <h2 className="py-4 text-2xl tracking-wide text-center">
+                                        <Balancer>{video.title}</Balancer>
+                                    </h2>
+                                    <YouTube videoId={video.src} opts={opts} />
                                 </div>
                             ))}
                         </main>

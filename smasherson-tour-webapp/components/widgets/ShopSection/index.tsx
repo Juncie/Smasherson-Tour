@@ -25,7 +25,7 @@ export default function ShopSection() {
                 />
                 <Image
                     src="/assets/logos/bad-birdie.png"
-                    width={100}
+                    width={175}
                     height={100}
                     alt="Bad Birdie"
                 />

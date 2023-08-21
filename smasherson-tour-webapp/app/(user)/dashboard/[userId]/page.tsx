@@ -14,11 +14,12 @@ export default function Dashboard({ params }) {
     const { data, error } = useSWR(URL, fetcher)
 
     if (!data?.data) return <div>Loading...</div>
+    if (error) return <div>Failed to load</div>
 
     return (
         <>
             <div className="antialiased bg-gray-50 dark:bg-gray-900">
-                <aside
+                {/* <aside
                     className="fixed top-0 left-0 z-40 w-64 h-screen pt-14 transition-transform -translate-x-full bg-white border-r border-gray-200 md:translate-x-0 dark:bg-gray-800 dark:border-gray-700"
                     aria-label="Sidenav"
                     id="drawer-navigation"
@@ -75,6 +76,7 @@ export default function Dashboard({ params }) {
                                     <span className="ml-3">Overview</span>
                                 </a>
                             </li>
+
                             <li>
                                 <button
                                     type="button"
@@ -142,6 +144,7 @@ export default function Dashboard({ params }) {
                                     </li>
                                 </ul>
                             </li>
+
                             <li>
                                 <button
                                     type="button"
@@ -209,6 +212,7 @@ export default function Dashboard({ params }) {
                                     </li>
                                 </ul>
                             </li>
+
                             <li>
                                 <a
                                     href="#"
@@ -232,6 +236,7 @@ export default function Dashboard({ params }) {
                                     </span>
                                 </a>
                             </li>
+
                             <li>
                                 <button
                                     type="button"
@@ -641,7 +646,7 @@ export default function Dashboard({ params }) {
                             </ul>
                         </div>
                     </div>
-                </aside>
+                </aside> */}
 
                 <main className="p-4 md:ml-64 h-auto pt-20">
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">

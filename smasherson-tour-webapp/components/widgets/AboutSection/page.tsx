@@ -50,7 +50,7 @@ export default function AboutSection() {
 
                                 <div className="w-5/6">
                                     <h4 className="font-semibold text-lg text-gray-700 dark:text-orange-400">
-                                        Compete Anywhere
+                                        Compete At Any TopTracer Range
                                     </h4>
                                     <p className="text-gray-500 dark:text-gray-400">
                                         Tee off against friends at any TopTracer
@@ -76,7 +76,7 @@ export default function AboutSection() {
 
                                 <div className="w-5/6">
                                     <h4 className="font-semibold text-lg text-gray-700 dark:text-blue-300">
-                                        Real Time Location
+                                        Track Your Stats and Progress
                                     </h4>
                                     <p className="text-gray-500 dark:text-gray-400">
                                         Asperiores nemo possimus nesciunt quam

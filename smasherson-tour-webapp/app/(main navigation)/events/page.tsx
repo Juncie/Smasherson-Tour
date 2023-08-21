@@ -29,7 +29,7 @@ export default function EventsPage(): JSX.Element {
         )
 
     return (
-        <div className="w-full mt-16">
+        <div className="w-full py-16">
             <div className="container mx-auto">
                 <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full pt-8">
                     {data.data &&

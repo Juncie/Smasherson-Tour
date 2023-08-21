@@ -3,7 +3,7 @@ import { createContext, useContext, useState } from 'react'
 
 const UserContext = createContext({})
 
-type userData = {
+type UserData = {
     first_name: string | null
     last_name: string | null
     home_course: string | null
@@ -13,8 +13,9 @@ type userData = {
     profile_picture: string | null
 }
 
+// context/UserContext.tsx
 export const UserContextProvider = ({ children }) => {
-    const [user, setUser] = useState({})
+    const [user, setUser] = useState<UserData | null>(null)
 
     return (
         <UserContext.Provider value={{ user, setUser }}>

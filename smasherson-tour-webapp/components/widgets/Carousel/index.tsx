@@ -5,22 +5,13 @@ import { Navigation, Pagination } from 'swiper'
 import 'swiper/swiper-bundle.css'
 import Slide from './CarouselSlide'
 import { SlideType } from './CarouselSlide'
-import Hero from '../Hero'
 
-interface CarouselProps {
-    data: SlideType[]
-}
-
-const Carousel: React.FC<CarouselProps> = ({ data }: CarouselProps) => {
+const Carousel = ({ data }) => {
     const [slideIndex, setSlideIndex] = useState(0)
-    const [slides, setSlides] = useState<SlideType[]>([])
+    const [slides, setSlides] = useState<Array<SlideType>>([])
 
     useEffect(() => {
-        if (data) {
-            setSlides(data)
-        } else {
-            setSlides(demoProps.data)
-        }
+        data ?? setSlides(data)
     }, [data])
 
     return (
@@ -51,14 +42,3 @@ const Carousel: React.FC<CarouselProps> = ({ data }: CarouselProps) => {
 }
 
 export default Carousel
-
-const demoProps: CarouselProps = {
-    data: [
-        {
-            children: <Hero />,
-        },
-        {
-            children: <h1>Hellow World</h1>,
-        },
-    ],
-}
